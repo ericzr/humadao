@@ -5,6 +5,9 @@ import { LoadingFallback } from "./components/common/LoadingFallback";
 const lazy = (importFn: () => Promise<{ [key: string]: React.ComponentType }>, name: string) =>
   () => importFn().then((m) => ({ Component: m[name] }));
 
+// Strip trailing slash so "/humadao/" → "/humadao" (react-router wants no slash).
+const basename = import.meta.env.BASE_URL.replace(/\/$/, "") || "/";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -30,4 +33,4 @@ export const router = createBrowserRouter([
       { path: "*", lazy: lazy(() => import("./components/pages/HomePage"), "HomePage") },
     ],
   },
-]);
+], { basename });
