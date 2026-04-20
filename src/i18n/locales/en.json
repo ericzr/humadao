@@ -1,0 +1,1406 @@
+{
+  "connectWallet": "Connect Wallet",
+  "wallet": {
+    "connectTitle": "Connect e-CNY Wallet",
+    "connectDesc": "Connect with your Digital RMB wallet, safe and fast",
+    "connecting": "Connecting wallet…",
+    "ecnyApp": "e-CNY App",
+    "ecnyAppDesc": "Scan QR code with the e-CNY App",
+    "bankAuth": "Or authorize via bank app",
+    "securityNote": "The connection process is secured by the Digital Currency Research Institute of the People's Bank of China. Your asset information is used only for DAO governance and incentive scenarios on this platform.",
+    "bank": {
+      "icbc": "ICBC",
+      "boc": "Bank of China",
+      "ccb": "CCB",
+      "abc": "ABC",
+      "bocom": "BoCom",
+      "psbc": "PSBC"
+    },
+    "balance": "e-CNY Balance",
+    "digitalRMB": "Digital RMB",
+    "bank_label": "Bank",
+    "walletId": "Wallet ID",
+    "tierLabel": "Wallet Tier",
+    "tier": {
+      "1": "Tier 1",
+      "2": "Tier 2",
+      "3": "Tier 3",
+      "4": "Tier 4"
+    },
+    "tierLimit": {
+      "1": "Unlimited",
+      "2": "¥50k/day",
+      "3": "¥20k/day",
+      "4": "¥5k/day"
+    },
+    "recentTx": "Recent Transactions",
+    "tx": {
+      "daoReward": "DAO Contribution Reward",
+      "govStake": "Governance Proposal Stake",
+      "bountySettle": "Bounty Settlement",
+      "nftMint": "NFT Mint"
+    },
+    "disconnect": "Disconnect Wallet",
+    "connectedEcny": "e-CNY Connected",
+    "notConnected": "Wallet not connected"
+  },
+  "nav": {
+    "discover": "Discover",
+    "townHall": "Town Hall",
+    "bounties": "Bounties",
+    "contributors": "Contributors",
+    "workspace": "My Workspace",
+    "governance": "Governance",
+    "chat": "Collaboration",
+    "bookmarks": "Bookmarks",
+    "profile": "Profile",
+    "platform": "Platform",
+    "myDAOs": "My DAOs",
+    "dao": {
+      "peaq": "peaq Network",
+      "gitcoin": "Gitcoin DAO",
+      "bankless": "BanklessDAO",
+      "gitcoinGrants": "Gitcoin Grants",
+      "gitcoinPassport": "Gitcoin Passport",
+      "gitcoinAllo": "Gitcoin Allo",
+      "banklessMedia": "Bankless Media",
+      "banklessConsulting": "Bankless Consulting"
+    },
+    "personal": "Personal",
+    "createProject": "Create Project",
+    "createDAO": "Create DAO",
+    "connected": "Connected"
+  },
+  "home": {
+    "heroEyebrow": "Consensus infrastructure for real-world collaborative missions",
+    "heroTitle": "Human Consensus Organization Collaboration System",
+    "heroDesc": "Exist in any form. Create, build, participate — connect with every emerging consensus happening in this world.",
+    "startExplore": "Start Exploring",
+    "createProject": "Create Project",
+    "whitepaper": "Whitepaper",
+    "heroPanelTitle": "Prototype Coverage",
+    "heroPanel": {
+      "projects": "Showcase Projects",
+      "active": "Already Running",
+      "incubating": "In Incubation",
+      "offline": "Offline or Hybrid Ready",
+      "desc": "These prototype projects already span education, eldercare, food safety, urban nodes, living networks, cultural publishing, and protocol collaboration, with {{count}} simulated potential participants."
+    },
+    "realTracksTitle": "Reality Tracks",
+    "realTracksDesc": "Huma DAO is not only for internet-native projects. We are organizing real-world missions that need long-term collaboration, shared governance, and value distribution into evolving consensus communities.",
+    "cluster": {
+      "humanMachine": "Human-Machine Production & Protocol Collaboration",
+      "humanMachineDesc": "Explore how new productivity can be organized through a knowledge reactor, agent markets, automation farms, and protocol crowdsourcing.",
+      "publicInfra": "Public Trust & Infrastructure",
+      "publicInfraDesc": "Build verifiable, collaborative, accountable real-world infrastructure through trusted food systems and urban energy nodes.",
+      "careLiving": "Care, Living & Community Life",
+      "careLivingDesc": "Move eldercare and living from isolated burdens into collaborative neighborhood networks and real-life communities.",
+      "educationCulture": "Education & Knowledge Production",
+      "educationCultureDesc": "Rebuild learning, knowledge capture, and public expression through open universities and visual books.",
+      "lifestyleHealing": "Lifestyle & Healing Brands",
+      "lifestyleHealingDesc": "Explore new relationships between products, ritual, narrative, and community through healing jewelry."
+    },
+    "journey": {
+      "connectTitle": "Connect e-CNY Wallet",
+      "connectDesc": "Securely access the Digital RMB ecosystem",
+      "discoverTitle": "Discover or Create a DAO",
+      "discoverDesc": "Match like-minded organizations by values",
+      "contributeTitle": "Govern & Contribute",
+      "contributeDesc": "Vote, bounties, and collaboration in one place",
+      "earnTitle": "Earn Fair Rewards",
+      "earnDesc": "Contributions auto-tracked, incentives settled in real time"
+    },
+    "visionSlogan": "Weaving the world with consensus",
+    "whyHuma": "Redefining Organizations & Collaboration",
+    "feat": {
+      "roles": "Fluid Roles",
+      "rolesDesc": "No more fixed positions or hierarchies — join with your skills and interests, earn influence through contributions, and move freely between organizations.",
+      "visible": "Every Contribution Counts",
+      "visibleDesc": "Code commits, proposals, community work — all contributions are recorded and quantified, never buried under layers of reporting.",
+      "governance": "Transparent Decisions",
+      "governanceDesc": "From proposal to vote to execution — fully open and traceable. Everyone can participate, and every decision stands up to scrutiny.",
+      "reputation": "Portable Reputation",
+      "reputationDesc": "Your proof of ability is no longer locked inside one company — cross-org contribution history and skill credentials are your own career asset.",
+      "beyond": "Beyond Companies & Communities",
+      "beyondDesc": "Open-source projects, interest groups, public goods, startup teams — anywhere collaboration is needed, the same tools can power self-governance.",
+      "mission": "Connect With Emerging Consensus",
+      "missionDesc": "Discover like-minded people, borderless projects, and world-changing organizations — then join them, or create your own."
+    },
+    "activeOrgs": "Active Organizations",
+    "viewAll": "View All",
+    "members": "members",
+    "dao": {
+      "peaq": "peaq Network",
+      "peaqDesc": "Powering the Economy of Things",
+      "gitcoin": "Gitcoin DAO",
+      "gitcoinDesc": "Open source public goods funding",
+      "bankless": "BanklessDAO",
+      "banklessDesc": "Bankless media and education"
+    }
+  },
+  "discover": {
+    "title": "Discover",
+    "subtitle": "Explore DAO ecosystems, bounty opportunities, and top contributors",
+    "clusterTitle": "Real-world Mission Tracks",
+    "searchPlaceholder": "Search DAOs, bounties, contributors...",
+    "trendingDAO": "Hot DAOs",
+    "hotBounties": "Hot Bounties",
+    "topContributors": "Top Contributors",
+    "viewAll": "View All →",
+    "applicants": "applicants",
+    "reputation": "Reputation",
+    "cat": {
+      "publicGoods": "Public Goods",
+      "media": "Media"
+    },
+    "bounty": {
+      "audit": "Solidity Security Audit",
+      "frontend": "Frontend UI Refactor",
+      "docs": "Community Governance Docs"
+    },
+    "skill": {
+      "dev": "Development",
+      "web3": "Web3",
+      "ops": "Operations",
+      "design": "Design",
+      "marketing": "Marketing",
+      "community": "Community"
+    }
+  },
+  "townHall": {
+    "title": "Town Hall",
+    "subtitle": "Discover and join consensus organizations built for real-world missions, collaboration, and governance",
+    "searchPlaceholder": "Search DAOs...",
+    "orgs": "organizations",
+    "createCTA": "Can't find what you're looking for? Start your own DAO",
+    "createCTADesc": "From education and eldercare to food safety, urban space, and cultural products, organize any long-term social mission as an evolving consensus community.",
+    "filter": {
+      "values": "Core Values",
+      "spectrum": "Collaboration",
+      "projectType": "Project Type",
+      "sortBy": "Sort By",
+      "more": "Filters",
+      "lifecycle": "Stage",
+      "mode": "Participation",
+      "region": "Region",
+      "all": "All",
+      "noFilter": "Any",
+      "reset": "Reset",
+      "confirm": "Confirm",
+      "sortMembers": "Members",
+      "sortActivity": "Activity",
+      "sortNewest": "Newest",
+      "projectTypes": {
+        "socialPublic": "Social & Public",
+        "techInternet": "Tech & Internet",
+        "mediaContent": "Media & Content",
+        "toolsProduct": "Tools & Products",
+        "education": "Education",
+        "research": "Research & Knowledge",
+        "publicGood": "Public Good",
+        "communityLife": "Community Life",
+        "cultureArt": "Culture & Art",
+        "business": "Business & Startup",
+        "industryChange": "Industry Change",
+        "localSpace": "Local & Space",
+        "manufacturing": "Manufacturing & Hardware",
+        "healthCare": "Health & Care",
+        "ecoAgriculture": "Ecology & Agriculture",
+        "infrastructure": "Infrastructure"
+      },
+      "modes": {
+        "online": "Online",
+        "offline": "Offline",
+        "hybrid": "Hybrid"
+      },
+      "regions": {
+        "global": "Global",
+        "asia": "East Asia",
+        "southeastAsia": "Southeast Asia",
+        "europe": "Europe",
+        "northAmerica": "North America",
+        "southAmerica": "South America",
+        "middleEast": "Middle East",
+        "africa": "Africa",
+        "oceania": "Oceania"
+      }
+    },
+    "quick": {
+      "active": "Projects already running",
+      "incubating": "Projects in incubation",
+      "offline": "Offline or hybrid collaboration"
+    },
+    "dao": {
+      "luboomReactor": "Truth Distillation - Luboom Reactor",
+      "luboomReactorDesc": "A living knowledge reactor for distilled insight, project experiments, and shared consensus",
+      "agentMarket": "Agent Market",
+      "agentMarketDesc": "An open marketplace for discoverable, reviewable, continuously deployable agent capabilities",
+      "agentFarm": "Agent Automation Farm",
+      "agentFarmDesc": "Organize recurring digital labor into scalable, shareable automation production units",
+      "protocolCrowdsourcing": "Protocol Crowdsourcing Platform",
+      "protocolCrowdsourcingDesc": "Move crowdsourcing from one-off gigs to a protocol network with transparent rules and portable reputation",
+      "trustedFood": "Decentralized Trusted Food Safety Architecture",
+      "trustedFoodDesc": "A verifiable food trust network across origin, testing, circulation, and consumption",
+      "healingJewelry": "Feng Shui Healing Jewelry",
+      "healingJewelryDesc": "A long-term community brand turning jewelry into healing, ritual, and lifestyle expression",
+      "communityEldercare": "Community Eldercare",
+      "communityEldercareDesc": "A care community experiment built on local nodes and multi-role collaboration",
+      "openUniversity": "Open University",
+      "openUniversityDesc": "Rebuild education around co-learning, real projects, and cross-disciplinary growth",
+      "cityEnergyStation": "City Energy Pump Station",
+      "cityEnergyStationDesc": "Urban nodes that continuously replenish connection, resources, and action energy",
+      "freeLiving": "Free Living",
+      "freeLivingDesc": "Help people move and live across cities with more freedom and relational belonging",
+      "visualBooks": "Visual Books",
+      "visualBooksDesc": "Turn complex knowledge and social issues into visual publications with stronger reach and feeling",
+      "peaq": "peaq Network",
+      "peaqDesc": "Decentralized physical infrastructure network",
+      "ten": "TEN (formerly Obscuro)",
+      "tenDesc": "Privacy-focused Ethereum infrastructure",
+      "olive": "Olive Finance",
+      "oliveDesc": "Decentralized finance protocol",
+      "zeta": "ZetaChain",
+      "zetaDesc": "Omnichain interoperability infrastructure",
+      "nation3": "Nation3 DAO",
+      "nation3Desc": "Cloud-nation social experiment and digital governance",
+      "bankless": "BanklessDAO",
+      "banklessDesc": "Open finance media and education",
+      "gitcoin": "Gitcoin DAO",
+      "gitcoinDesc": "Open source and public goods funding",
+      "aave": "Aave DAO",
+      "aaveDesc": "Decentralized lending protocol governance",
+      "gitcoinGrants": "Gitcoin Grants",
+      "gitcoinGrantsDesc": "Manages and distributes Gitcoin grant rounds for open-source public goods",
+      "gitcoinPassport": "Gitcoin Passport",
+      "gitcoinPassportDesc": "Decentralized identity verification protocol with Sybil resistance",
+      "gitcoinAllo": "Gitcoin Allo",
+      "gitcoinAlloDesc": "Capital allocation protocol for efficient community resource distribution",
+      "banklessMedia": "Bankless Media",
+      "banklessMediaDesc": "Podcasts, newsletters and educational content",
+      "banklessConsulting": "Bankless Consulting",
+      "banklessConsultingDesc": "Governance and operational consulting for DAOs and Web3 projects"
+    }
+  },
+  "bounty": {
+    "title": "Open Bounties",
+    "subtitle": "Find and explore tasks and bounties across hundreds of DAOs",
+    "filter": "Filters",
+    "searchByName": "Search by name...",
+    "sort": "Sort",
+    "sortNewest": "Created Date (Newest First)",
+    "sortAmount": "Amount (High to Low)",
+    "sortDeadline": "Deadline",
+    "skills": "Skills",
+    "skillsHint": "Click a skill to view related tasks",
+    "language": "Language",
+    "allBounties": "All Bounties",
+    "allSkills": "All",
+    "reset": "Reset",
+    "confirm": "Confirm",
+    "results": "results",
+    "skill": {
+      "dev": "Development",
+      "design": "Design",
+      "translation": "Translation",
+      "writing": "Writing",
+      "marketing": "Marketing",
+      "community": "Community",
+      "product": "Product",
+      "research": "Research",
+      "ops": "Operations",
+      "data": "Data Analysis"
+    },
+    "lang": {
+      "en": "English",
+      "zh": "Chinese",
+      "ja": "Japanese"
+    },
+    "item": {
+      "aiWorkflow": "Create AI Workflow",
+      "aiWorkflowDao": "Billionaire",
+      "aiWorkflowTime": "1 month ago",
+      "aiWorkflowStatus": "Open for Bids",
+      "hireWeb3": "Hire Web3 Developer",
+      "hireWeb3Dao": "Web3 Hiring",
+      "hireWeb3Time": "1 month ago",
+      "hireWeb3Status": "In Progress",
+      "firstBounty": "Create Your First Bounty",
+      "firstBountyDao": "Web3 Hiring",
+      "firstBountyTime": "1 month ago",
+      "firstBountyStatus": "Open for Bids",
+      "solidityAudit": "Solidity Security Engineer – Post-Audit Verification (Uniswap V2 Fork)",
+      "solidityAuditDao": "Security Verification",
+      "solidityAuditTime": "2 months ago",
+      "solidityAuditStatus": "In Progress",
+      "storage": "Storage Infrastructure Implementation",
+      "storageTime": "2 months ago",
+      "storageStatus": "Open for Bids",
+      "frontendUI": "Frontend UI Refactor",
+      "frontendUITime": "3 days ago",
+      "frontendUIStatus": "Open for Bids",
+      "govDocs": "Community Governance Docs",
+      "govDocsTime": "1 week ago",
+      "govDocsStatus": "Under Review",
+      "translation": "Multi-language Translation - Korean",
+      "translationTime": "5 days ago",
+      "translationStatus": "Open for Bids"
+    }
+  },
+  "contributors": {
+    "title": "Contributors",
+    "subtitle": "Discover people by collaboration identity, participation level, contribution type, and real-world collaboration mode.",
+    "banner": "Enable revenue sharing to appear on the contributors page.",
+    "learnMore": "Learn more...",
+    "enableSharing": "Enable Revenue Sharing",
+    "searchPlaceholder": "Search contributors...",
+    "reputation": "Reputation",
+    "prestige": "Prestige",
+    "filter": {
+      "filterBtn": "Filters",
+      "availability": "Open to collaborate",
+      "all": "All",
+      "skill": "Skill Tags",
+      "reset": "Reset",
+      "confirm": "Confirm"
+    },
+    "sort": {
+      "reputation": "Reputation"
+    },
+    "role": {
+      "initiator": "Initiator",
+      "coBuilder": "Co-builder",
+      "coordinator": "Coordinator",
+      "reviewer": "Reviewer",
+      "connector": "Connector",
+      "host": "Host"
+    },
+    "roleFilter": {
+      "all": "All Roles",
+      "initiator": "Initiator",
+      "coBuilder": "Co-builder",
+      "coordinator": "Coordinator",
+      "reviewer": "Reviewer",
+      "connector": "Connector",
+      "host": "Host"
+    },
+    "skillFilter": {
+      "all": "All Skills"
+    },
+    "skillLayer": {
+      "1": "Human Core",
+      "2": "Human-led",
+      "3": "Execution"
+    },
+    "skill": {
+      "directionSensing": "Direction Sensing",
+      "consensusBuilding": "Consensus Building",
+      "emotionalCare": "Emotional Care",
+      "governanceDecision": "Governance Decision",
+      "structureDesign": "Structure Design",
+      "narrativeExpression": "Narrative Expression",
+      "experienceAesthetics": "Experience Aesthetics",
+      "networkWeaving": "Network Weaving",
+      "productInsight": "Product Insight",
+      "knowledgeProduction": "Knowledge Production",
+      "engineering": "Engineering",
+      "creativeProduction": "Creative Production",
+      "operationsData": "Operations & Data",
+      "educationTraining": "Education & Training",
+      "careService": "Care Service",
+      "fieldExecution": "Field Execution"
+    },
+    "participation": {
+      "observer": "Observer",
+      "temporary": "Temporary Contributor",
+      "active": "Active Member",
+      "core": "Core Co-builder",
+      "governance": "Governance Member"
+    },
+    "contribution": {
+      "task": "Task Delivery",
+      "governance": "Governance",
+      "education": "Education Support",
+      "community": "Community Care",
+      "coordination": "Coordination",
+      "care": "Care Work",
+      "research": "Research",
+      "content": "Content"
+    },
+    "collaboration": {
+      "online": "Online",
+      "offline": "Offline",
+      "hybrid": "Hybrid",
+      "longTerm": "Long-term",
+      "shortTerm": "Short-term",
+      "visionDriven": "Vision-driven",
+      "taskDriven": "Task-driven"
+    },
+    "status": {
+      "available": "Open to Collaborate",
+      "unavailable": "Not Available"
+    },
+    "assignmentStatus": {
+      "active": "Active",
+      "stewarding": "Stewarding",
+      "advising": "Advising",
+      "paused": "Paused",
+      "completed": "Completed"
+    },
+    "scope": {
+      "dao": "DAO Layer",
+      "project": "Project Layer",
+      "initiative": "Initiative Layer"
+    },
+    "card": {
+      "multiDao": "{{count}} DAOs"
+    }
+  },
+  "dao": {
+    "newProposal": "+ New Proposal",
+    "navigation": "Navigation",
+    "nav": {
+      "overview": "Overview",
+      "proposals": "Community Proposals",
+      "leaderboard": "Leaderboard",
+      "committee": "Joint Committee"
+    },
+    "bountyNav": "Bounties",
+    "peaqTitle": "peaq Network",
+    "peaqDesc": "Powering the Economy of Things",
+    "paymentTime": "Payment Time: 9.0 days",
+    "totalPaid": "Total Paid: $4,036.88",
+    "follow": "Follow",
+    "roleInfo": "The following roles grant you access to specific permissions and private spaces within this organization.",
+    "showcase": {
+      "vision": "Vision",
+      "consensus": "Consensus",
+      "businessModel": "Business Model",
+      "collaborationModel": "Collaboration",
+      "participation": "Participation",
+      "stage": "Current Stage"
+    },
+    "protocol": {
+      "title": "Minimum Viable Action Protocol",
+      "subtitle": "Consensus is not uniform thought — it is four things a community must make explicit",
+      "sharedGoal": "Shared Goal",
+      "sharedGoalDesc": "What we are doing together and why it is worth it",
+      "roleInterface": "Role Interface",
+      "roleInterfaceDesc": "Who can join and what scope they take on",
+      "settlementRule": "Settlement Rule",
+      "settlementRuleDesc": "How contribution is recognised and distributed",
+      "exitClause": "Exit Clause",
+      "exitClauseDesc": "How disagreement can pause, appeal, or fork",
+      "synthesisedHint": "This text is auto-derived from the current DAO profile. The governance council is encouraged to ratify a formal version in the charter."
+    },
+    "tab": {
+      "bounties": "Bounties",
+      "proposals": "Proposals",
+      "updates": "Updates",
+      "docs": "Docs",
+      "constitution": "Constitution",
+      "orgs": "Organizations",
+      "profile": "Profile",
+      "lineage": "Lineage",
+      "budget": "Budget"
+    },
+    "module": {
+      "comingSoon": "Coming soon",
+      "profile": { "label": "Profile", "desc": "Values, spectrum, vision, and how to join." },
+      "lineage": { "label": "Lineage", "desc": "Parent, children, forks, and inheritance." },
+      "protocolCard": { "label": "Protocol", "desc": "Shared goal, role interface, settlement rule, exit clause." },
+      "discussion": { "label": "Discussion", "desc": "Progress updates, long-form threads, retrospectives." },
+      "events": { "label": "Events", "desc": "Calendar, sessions, study circles, offline gatherings." },
+      "docs": { "label": "Docs", "desc": "Shared documents, knowledge base, archives." },
+      "proposals": { "label": "Proposals", "desc": "Drafting, discussion, and voting on decisions." },
+      "constitution": { "label": "Constitution", "desc": "Long-form charter and formal rules." },
+      "bounties": { "label": "Bounties", "desc": "Task posting, claiming, and payout." },
+      "kanban": { "label": "Board", "desc": "Shared Kanban and collaboration status." },
+      "contributions": { "label": "Contributions", "desc": "Contribution log and portable proofs." },
+      "budget": { "label": "Budget", "desc": "Treasury allocation, spend, and inflow." },
+      "tokenGov": { "label": "Token Governance", "desc": "Token holdings, voting power, and delegation." },
+      "arbitration": { "label": "Arbitration", "desc": "Dispute logging, mediation, and rulings." },
+      "paramGov": { "label": "Parameter Governance", "desc": "Numeric parameter changes (fees, rates, algorithm weights)." },
+      "metrics": { "label": "Metrics", "desc": "Protocol / community health and fairness KPIs." },
+      "subOrgs": { "label": "Sub-orgs", "desc": "Child DAO registry and federation links." },
+      "notionEmbed": { "label": "Notion", "desc": "Embed a Notion page as the collaboration space." },
+      "discordEmbed": { "label": "Discord", "desc": "Embed a Discord channel or server entry." },
+      "snapshot": { "label": "Snapshot", "desc": "Off-chain voting entry and proposal mirror." },
+      "safe": { "label": "Safe", "desc": "Multi-sig treasury balance and on-chain flow." }
+    },
+    "preset": {
+      "lite": { "label": "Lite Community", "desc": "Reading groups and interest circles. Profile, protocol, events, discussion only." },
+      "study": { "label": "Learning Community", "desc": "Long-running study groups and cohorts. Adds docs, board, and contributions." },
+      "standard": { "label": "Online Project DAO", "desc": "Standard DAO: proposals, bounties, budget, and fork — the full governance set." },
+      "protocol": { "label": "Fat-Protocol Governance", "desc": "Governing an external protocol: parameter governance, token, arbitration, metrics, Snapshot, Safe." },
+      "care": { "label": "Care / Public-Good Community", "desc": "Community care and public-interest service: events, proposals, bounties, budget, arbitration." },
+      "custom": { "label": "Custom", "desc": "Pick from scratch. Starts with profile, lineage, and the protocol card." }
+    },
+    "budget": {
+      "title": "Budget & Distribution",
+      "period": "This Quarter",
+      "total": "Total Budget",
+      "allocated": "Allocated",
+      "spent": "Spent",
+      "remaining": "Available",
+      "breakdown": "Breakdown",
+      "contributors": "Contributor Earnings",
+      "topEarners": "Top Earners",
+      "propose": "Propose Budget",
+      "history": "History",
+      "categories": {
+        "development": "Development",
+        "operations": "Operations",
+        "marketing": "Growth",
+        "research": "Research",
+        "reserve": "Reserve",
+        "community": "Community"
+      },
+      "status": {
+        "approved": "Approved",
+        "pending": "Pending",
+        "rejected": "Rejected"
+      },
+      "noData": "No budget data this period"
+    },
+    "orgs": {
+      "empty": "No sub-organizations yet",
+      "emptyHint": "Sub-organizations created within this parent DAO will appear here",
+      "count": "{{count}} sub-organizations",
+      "view": "View details"
+    },
+    "bountyCategories": "Bounty Categories",
+    "cat": {
+      "engineering": "Engineering",
+      "grants": "Grants Program",
+      "ecosystem": "Ecosystem & Partnerships",
+      "community": "Community & Social Media",
+      "education": "Education & Research",
+      "content": "Content Creation"
+    },
+    "tasks": "tasks",
+    "proposals": "Proposals",
+    "proposal": {
+      "treasury": "Increase Community Treasury Allocation to ¥50,000",
+      "treasuryStatus": "Voting",
+      "treasuryDeadline": "2 days left",
+      "incentive": "Launch Q3 Ecosystem Incentive Program",
+      "incentiveStatus": "Passed",
+      "incentiveDeadline": "Ended",
+      "grading": "Modify Contributor Grading Criteria",
+      "gradingStatus": "Discussion",
+      "gradingDeadline": "5 days left"
+    },
+    "for": "For",
+    "against": "Against",
+    "progressUpdates": "Progress Updates",
+    "update": {
+      "mainnet": "v2.0 Mainnet Launch Announcement",
+      "mainnetDate": "3 days ago",
+      "mainnetType": "Milestone",
+      "nodes": "Southeast Asia Node Deployment Complete",
+      "nodesDate": "1 week ago",
+      "nodesType": "Technical",
+      "finance": "Q2 Financial Report Published",
+      "financeDate": "2 weeks ago",
+      "financeType": "Governance"
+    },
+    "documents": "Documents",
+    "doc": {
+      "whitepaper": "Whitepaper",
+      "techDocs": "Technical Docs",
+      "roadmap": "Roadmap",
+      "guide": "Contributor Guide"
+    },
+    "const": {
+      "title": "DAO Constitution",
+      "subtitle": "This constitution is enforced by smart contracts, defining the governance rules and operational framework",
+      "smartContractNote": "On-chain Constitution",
+      "smartContractNoteDesc": "The following clauses are encoded and executed by smart contracts. Any amendment requires an on-chain vote to take effect. Contract: 0x71C7...a3F2",
+      "principlesTitle": "Core Principles & Mission",
+      "governanceTitle": "Governance Structure",
+      "votingTitle": "Voting Mechanism",
+      "treasuryTitle": "Treasury Management",
+      "membersTitle": "Member Management",
+      "amendmentTitle": "Amendment Process",
+      "principles": {
+        "mission": "Mission: Build an open, transparent, and efficient decentralized collaboration network",
+        "vision": "Vision: Ensure every contributor's value is fairly recorded and rewarded",
+        "values": "Values: Transparent Governance · Fair Incentives · Open Collaboration · Continuous Iteration"
+      },
+      "governance": {
+        "committee": "The Joint Committee consists of 5 members responsible for daily operations, serving 6-month terms",
+        "roles": "Roles include: Core Contributor, Contributor, and Observer, each with distinct permissions",
+        "decision": "Routine matters decided by committee majority; major decisions require full community vote"
+      },
+      "voting": {
+        "threshold": "Proposal threshold: Hold ≥ 100 governance tokens or reputation ≥ 500",
+        "cycle": "Voting period: Standard proposals 5 days, emergency proposals 48 hours",
+        "quorum": "Quorum: ≥ 20% of governance tokens must participate in the vote",
+        "pass": "Passing condition: For votes > Against votes, and quorum is met"
+      },
+      "treasury": {
+        "management": "Treasury managed by multi-sig wallet (3/5 signatures). Single expenditure > ¥5,000 requires proposal approval",
+        "budget": "Quarterly budget prepared by committee and approved by community vote",
+        "distribution": "Revenue split: 50% contributor incentives · 30% treasury reserves · 20% ecosystem development"
+      },
+      "members": {
+        "join": "Joining: Complete identity verification and hold minimum 10 governance tokens to become a member",
+        "conduct": "Code of Conduct: Malicious attacks, misinformation, and undisclosed conflicts of interest are prohibited",
+        "dispute": "Dispute Resolution: Arbitration committee settles disputes through on-chain voting"
+      },
+      "amendment": {
+        "process": "Amendment proposals require ≥ 3 committee members or ≥ 10% of token holders to co-sponsor",
+        "effective": "Amendments require ≥ 67% approval with ≥ 30% participation, effective 7 days after passing"
+      },
+      "footer": "Last revised December 2025 · Version v2.1 · Contract audited by CertiK"
+    },
+    "about": "About",
+    "aboutDesc": "DePIN network powering the Economy of Things",
+    "contributorsLabel": "Contributors",
+    "inviteContributors": "Invite Contributors",
+    "admins": "Admins",
+    "joinOrg": "Join",
+    "joinPending": "Pending...",
+    "joined": "Joined",
+    "memberBadge": "Member",
+    "moduleSettings": {
+      "entry": "Modules",
+      "back": "Back",
+      "title": "Governance modules",
+      "subtitle": "Toggle modules on or off for this DAO.",
+      "legacyTitle": "Currently on legacy fallback",
+      "legacyDesc": "This DAO hasn't picked an explicit module set yet — it's showing all legacy tabs. Saving will switch to an explicit module list.",
+      "diffTitle": "Change preview",
+      "added": "Added",
+      "removed": "Removed",
+      "removedWarning": "Data behind removed tabs is not deleted — re-enabling the module brings them back.",
+      "reset": "Clear override",
+      "cancel": "Cancel",
+      "save": "Save"
+    },
+    "moduleConfig": {
+      "sectionLabel": "Settings",
+      "proposals": {
+        "quorumPct":   { "label": "Quorum",         "help": "Minimum participation for a vote to count." },
+        "votingDays":  { "label": "Voting period (days)", "help": "How long a proposal stays open." },
+        "approvalPct": { "label": "Approval threshold", "help": "Yes votes ≥ this ratio → passes." }
+      },
+      "budget": {
+        "treasuryAddress": { "label": "Treasury address", "placeholder": "0x... or Safe address" },
+        "currency":        { "label": "Default currency", "placeholder": "USDC / ETH / USD" }
+      },
+      "tokenGov": {
+        "symbol":   { "label": "Token symbol" },
+        "contract": { "label": "Contract address" }
+      },
+      "snapshot": {
+        "spaceId": { "label": "Space ID", "placeholder": "your-space.eth", "help": "ENS / space name on Snapshot." }
+      },
+      "safe": {
+        "chainId": { "label": "Chain ID", "help": "1 = Ethereum mainnet, 100 = Gnosis Chain." },
+        "address": { "label": "Safe address", "placeholder": "0x..." }
+      },
+      "notionEmbed": {
+        "pageUrl": { "label": "Notion page URL", "placeholder": "https://www.notion.so/..." }
+      },
+      "discordEmbed": {
+        "serverId":  { "label": "Server ID" },
+        "inviteUrl": { "label": "Invite URL", "placeholder": "https://discord.gg/..." }
+      }
+    },
+    "integration": {
+      "depthLabel": "Depth",
+      "level": {
+        "L0": { "label": "Link", "desc": "L0 · External link only" },
+        "L1": { "label": "Embed", "desc": "L1 · Read-only iframe" },
+        "L2": { "label": "Read", "desc": "L2 · Native read via API" },
+        "L3": { "label": "Write", "desc": "L3 · Two-way write" },
+        "L4": { "label": "Events", "desc": "L4 · Webhooks / realtime sync" }
+      },
+      "module": {
+        "notionEmbed": {
+          "L0": "L0 · Link to Notion in the sidebar",
+          "L1": "L1 · Embed Notion page as iframe",
+          "L2": "L2 · Read content natively via Notion API"
+        },
+        "discordEmbed": {
+          "L0": "L0 · Invite link / server entry",
+          "L1": "L1 · Discord widget embed",
+          "L4": "L4 · Bot listens and syncs events"
+        },
+        "snapshot": {
+          "L0": "L0 · Link to Snapshot space",
+          "L1": "L1 · Embed space as iframe",
+          "L2": "L2 · Pull proposals and votes",
+          "L3": "L3 · Create Snapshot proposals from humadao"
+        },
+        "safe": {
+          "L0": "L0 · Link to Safe App",
+          "L2": "L2 · Show Safe balance and flow",
+          "L3": "L3 · Construct and submit multisig txs"
+        }
+      }
+    }
+  },
+  "profile": {
+    "bio": "Software Engineer | Web3 | Podcast Host - Fluent in English, Arabic & French",
+    "international": "International",
+    "reputationScore": "Reputation Score",
+    "earnings": "Earnings",
+    "earningsShare": "Revenue Share",
+    "stake": "Stake",
+    "organizations": "Organizations",
+    "skills": "Skill Tags",
+    "languages": "Working Languages",
+    "relationshipSnapshot": "Relationship Snapshot",
+    "activeDaos": "Active DAOs",
+    "rolePortfolio": "Role Portfolio",
+    "skillPortfolio": "Skill Portfolio",
+    "currentFootprint": "Current Collaboration Footprint",
+    "rep": {
+      "last6Months": "Last 6 months trend",
+      "showBreakdown": "Show reputation breakdown",
+      "hideBreakdown": "Hide reputation breakdown",
+      "taskCompletion": "Task Completion",
+      "governance": "Governance Participation",
+      "communityEngagement": "Community Engagement",
+      "peerReview": "Peer Review",
+      "mentorship": "Mentorship"
+    },
+    "featuredWork": "Featured Work",
+    "portfolio": "Portfolio Website",
+    "portfolioDesc": "Portfolio | Blog | About Me",
+    "reviews": "Reviews",
+    "teamGuild": "Team Guild",
+    "years": "years",
+    "viewTask": "→ View Task",
+    "contributions": "Contributions",
+    "tab": {
+      "all": "All",
+      "dev": "Development",
+      "ops": "Operations",
+      "admin": "Admin",
+      "product": "Product",
+      "writing": "Writing",
+      "works": "Works & Contributions",
+      "timeline": "Contribution Log",
+      "daos": "DAO Relations"
+    }
+  },
+  "workspace": {
+    "title": "My Workspace",
+    "subtitle": "Manage your DAO collaborations, tasks, votes, and earnings",
+    "joinedDAOs": "Joined DAOs",
+    "activeTasks": "Active Tasks",
+    "pendingVotes": "Pending Votes",
+    "totalEarnings": "Total Earnings",
+    "myDAOs": "My DAOs",
+    "taskBoard": "Task Board",
+    "viewAll": "View All →",
+    "pendingProposals": "Pending Proposals",
+    "notifications": "Notifications",
+    "markAllRead": "Mark all read",
+    "quickLinks": "Quick Links",
+    "link": {
+      "bounties": "Browse Bounties",
+      "governance": "Governance",
+      "chat": "Chat",
+      "create": "Create Project"
+    },
+    "role": {
+      "founder": "Founder",
+      "researcher": "Researcher",
+      "contributor": "Contributor",
+      "admin": "Admin",
+      "coordinator": "Coordinator"
+    },
+    "tasks": "tasks",
+    "status": {
+      "open": "Open",
+      "inProgress": "In Progress",
+      "review": "Under Review",
+      "done": "Completed"
+    },
+    "kanban": {
+      "title": "Collaboration Board",
+      "open": "Open",
+      "inProgress": "In Progress",
+      "review": "Under Review",
+      "done": "Completed",
+      "emptyCol": "No tasks",
+      "addTask": "Add task"
+    },
+    "for": "For",
+    "task": {
+      "design": "Product Prototype Design",
+      "designDeadline": "5 days left",
+      "research": "Governance Mechanism Research",
+      "researchDeadline": "2 weeks left",
+      "frontend": "Frontend Component Development",
+      "frontendDeadline": "3 days left",
+      "docs": "Community Docs Update",
+      "docsDeadline": "Submitted",
+      "contract": "Smart Contract Testing",
+      "contractDeadline": "1 week left",
+      "discord": "Discord Bot Configuration",
+      "discordDeadline": "Completed"
+    },
+    "vote": {
+      "treasury": "Increase Community Treasury",
+      "treasuryDeadline": "2 days left",
+      "grading": "Modify Contributor Grading",
+      "gradingDeadline": "5 days left"
+    },
+    "notif": {
+      "1": "Your task 'Frontend Component Dev' received a new comment",
+      "2": "peaq Network posted a new bounty",
+      "3": "Proposal 'Increase Treasury' voting ending soon",
+      "4": "You received ¥300 task reward",
+      "1Time": "10 min ago",
+      "2Time": "1 hour ago",
+      "3Time": "3 hours ago",
+      "4Time": "1 day ago"
+    },
+    "earnings": {
+      "title": "Earnings Overview",
+      "total": "Total Earned",
+      "pending": "Pending",
+      "thisMonth": "This Month",
+      "byDAO": "By DAO",
+      "logContrib": "Log Contribution",
+      "history": "History",
+      "settle": "Request Settlement",
+      "pendingBadge": "Pending"
+    },
+    "contrib": {
+      "logTitle": "Log Contribution",
+      "logDesc": "Record non-task contributions: coordination, education, community care, etc.",
+      "typeLabel": "Contribution Type",
+      "types": {
+        "coordination": "Coordination",
+        "education": "Education & Training",
+        "community": "Community Care",
+        "care": "Emotional Support",
+        "mediation": "Mediation",
+        "documentation": "Documentation",
+        "content": "Content Creation",
+        "outreach": "Outreach"
+      },
+      "daoLabel": "DAO",
+      "hoursLabel": "Hours Invested",
+      "summaryLabel": "Description",
+      "summaryPlaceholder": "Describe what you did and its impact...",
+      "submit": "Submit",
+      "submitting": "Submitting...",
+      "success": "Contribution Logged",
+      "successDesc": "Thank you! Your contribution has been submitted and is pending review by the DAO admin.",
+      "requiredHint": "Type, DAO and description are required"
+    }
+  },
+  "governance": {
+    "title": "Governance",
+    "subtitle": "Participate in proposal voting and shape the future of DAOs",
+    "activeProposals": "Active Proposals",
+    "passedThisMonth": "Passed This Month",
+    "totalVoters": "Total Voters",
+    "participationRate": "Participation Rate",
+    "filter": {
+      "all": "All",
+      "voting": "Voting",
+      "passed": "Passed",
+      "discussion": "Discussion",
+      "rejected": "Rejected"
+    },
+    "createProposal": "+ Create Proposal",
+    "for": "For",
+    "against": "Against",
+    "abstain": "Abstain",
+    "voted": "voted",
+    "comments": "comments",
+    "proposer": "Proposer",
+    "belongsTo": "DAO",
+    "deadline": "Deadline",
+    "voterCount": "Voters",
+    "voteFor": "Vote For",
+    "voteAgainst": "Vote Against",
+    "voteAbstain": "Abstain",
+    "discussion": "Discussion",
+    "proposal": {
+      "treasury": "Increase Community Treasury Allocation to ¥50,000",
+      "treasuryDesc": "Propose increasing the community treasury quarterly allocation to ¥50,000 to support more ecosystem projects.",
+      "incentive": "Launch Q3 Ecosystem Incentive Program",
+      "incentiveDesc": "Launch a new round of ecosystem incentives in Q3, focusing on DePIN developers.",
+      "grading": "Modify Contributor Grading Criteria",
+      "gradingDesc": "Redefine contributor grading criteria with multi-dimensional evaluation metrics.",
+      "quadratic": "Introduce Quadratic Voting",
+      "quadraticDesc": "Propose using quadratic voting for major decisions to prevent vote concentration.",
+      "crossDAO": "Establish Cross-DAO Collaboration Framework",
+      "crossDAODesc": "Propose establishing standardized cross-DAO collaboration frameworks and communication protocols."
+    },
+    "comment": {
+      "1": "Support this proposal, it's important for ecosystem development.",
+      "2": "Suggest adding a specific budget allocation plan.",
+      "1Time": "2 hours ago",
+      "2Time": "5 hours ago"
+    },
+    "create": {
+      "title": "Create Proposal",
+      "typeLabel": "Proposal Type",
+      "types": {
+        "budget": "Budget Request",
+        "rule": "Rule Change",
+        "personnel": "Personnel",
+        "partnership": "Partnership",
+        "experiment": "Experiment",
+        "other": "Other"
+      },
+      "titleLabel": "Title",
+      "titlePlaceholder": "Briefly describe your proposal",
+      "descLabel": "Description",
+      "descPlaceholder": "Describe the background, goals, expected impact and execution plan...",
+      "daoLabel": "DAO",
+      "daoPlaceholder": "Select associated DAO",
+      "deadlineLabel": "Discussion Deadline",
+      "deadlines": {
+        "3d": "3 days",
+        "7d": "7 days",
+        "14d": "14 days",
+        "30d": "30 days"
+      },
+      "submit": "Create Proposal",
+      "submitting": "Creating...",
+      "success": "Proposal Created",
+      "successDesc": "Your proposal is now in the discussion phase. Community members can participate until the deadline.",
+      "requiredHint": "Title and description are required"
+    }
+  },
+  "proposalDetail": {
+    "notFound": "Proposal not found",
+    "backToGovernance": "Back to Governance",
+    "dao": "DAO",
+    "votingResult": "Voting Result",
+    "castVote": "Cast your vote",
+    "changeVote": "You have voted. You can change it.",
+    "votedMessage": "You voted \"{{choice}}\""
+  },
+  "chat": {
+    "channel": {
+      "general": "General",
+      "engineering": "peaq-engineering",
+      "bounty": "Bounty Discussion",
+      "governance": "Governance Proposals",
+      "announcement": "Announcements"
+    },
+    "channels": "Channels",
+    "dms": "Direct Messages",
+    "online": "Online",
+    "offline": "Offline",
+    "members": "Members",
+    "searchPlaceholder": "Search...",
+    "inputPlaceholder": "Send message to",
+    "msg": {
+      "1": "Hey everyone! Just finished the frontend component refactor, please help review.",
+      "2": "Sure, I'll take a look. By the way, what's the deadline for the 'Frontend UI Refactor' bounty?",
+      "3": "Before next Friday. You can check details in the bounty pool.",
+      "4": "Reminder: the 'Increase Community Treasury' vote ends in two days, please vote soon.",
+      "5": "Voted in favor. Also, I'd like to take the 'Community Governance Docs' bounty. Is anyone working on this?",
+      "6": "You can apply directly in the bounty pool. I wrote similar docs before, happy to share templates.",
+      "7": "There's a meeting about the Q3 incentive plan at 3 PM, don't forget to join."
+    },
+    "ref": {
+      "frontendUI": "Frontend UI Refactor",
+      "treasury": "Increase Community Treasury to ¥50,000"
+    }
+  },
+  "daoProfile": {
+    "soulLabel": "Core Values Profile",
+    "instLabel": "Operations & Distribution Profile",
+    "value": {
+      "love": "Love",
+      "commons": "Communism",
+      "justice": "Justice",
+      "truth": "Truth",
+      "valueCreation": "Value Creation",
+      "freedom": "Freedom",
+      "order": "Order"
+    },
+    "spectrum": {
+      "visionVsTask": ["Vision-driven", "Task-driven"],
+      "coreAuthVsBroadGov": ["Core Decision", "Co-governance"],
+      "longVsShort": ["Long-term Co-building", "Short-term Participation"]
+    }
+  },
+  "create": {
+    "title": "Create New Project",
+    "subtitle": "Create a DAO project and attract contributors to collaborate",
+    "basicInfo": "Basic Information",
+    "projectName": "Project Name",
+    "projectNamePlaceholder": "Enter project name",
+    "projectBrief": "Project Brief",
+    "projectBriefPlaceholder": "Describe your project in one sentence",
+    "detailedDesc": "Detailed Description",
+    "detailedDescPlaceholder": "Describe project goals, vision, technical approach...",
+    "projectLogo": "Project Logo",
+    "categoryAndTags": "Category & Tags",
+    "category": "Project Category",
+    "categoryPlaceholder": "Select category",
+    "tags": "Tags",
+    "addTag": "Add tag",
+    "requiredSkills": "Required Skills",
+    "requiredSkillsDesc": "Select the contributor skills needed for this project",
+    "funding": "Funding & Incentives",
+    "initialBudget": "Initial Budget",
+    "initialBudgetPlaceholder": "e.g., ¥10,000",
+    "tokenSymbol": "Token Symbol",
+    "tokenSymbolPlaceholder": "e.g., e-CNY",
+    "revenueModel": "Revenue Sharing Model",
+    "revenueModelPlaceholder": "Select model",
+    "revenueFixed": "Fixed Reward",
+    "revenueShare": "Revenue Share",
+    "revenueBounty": "Bounty",
+    "links": "Related Links",
+    "website": "Website",
+    "linkPlaceholder": "Enter {link} URL",
+    "saveDraft": "Save Draft",
+    "publish": "Publish Project",
+    "prev": "Previous",
+    "next": "Next",
+    "successTitle": "DAO Created Successfully!",
+    "successDesc": "Your DAO organization has been created and is now visible on the Explore page.",
+    "backHome": "Back to Home",
+    "createAnother": "Create Another",
+    "step": {
+      "basic": "Basic Info",
+      "category": "Category & Tags",
+      "modules": "Modules",
+      "profile": "Org Profile",
+      "skills": "Skills",
+      "funding": "Funding",
+      "links": "Links"
+    },
+    "modules": {
+      "presetTitle": "Pick a preset",
+      "presetDesc": "Start from one of 6 typical DAO shapes — you can fine-tune afterwards.",
+      "tuneTitle": "Fine-tune modules",
+      "tuneDesc": "Toggle governance modules as needed. Dependencies are auto-included.",
+      "previewTitle": "Final tab preview",
+      "previewDesc": "This is the tab order your DAO home will render.",
+      "previewEmpty": "No modules selected.",
+      "locked": "Required",
+      "requires": "Requires",
+      "modulesSuffix": "modules",
+      "group": {
+        "core": "Core",
+        "basic": "Basic",
+        "governance": "Governance",
+        "economic": "Treasury",
+        "advanced": "Advanced",
+        "integration": "Integrations"
+      }
+    },
+    "profile": {
+      "title": "Organization Profile",
+      "desc": "Define the soul and operating framework of your organization",
+      "presetLabel": "Select a preset template",
+      "presetNone": "Custom",
+      "presetIdealCommunity": "Ideal Community",
+      "presetProjectExecution": "Project Execution",
+      "presetCrowdsourcing": "Crowdsourcing",
+      "presetPublicGood": "Public Good",
+      "valuesTitle": "Core Values Coordinates",
+      "spectrumTitle": "Operations & Distribution Coordinates"
+    },
+    "cat": {
+      "defi": "DeFi",
+      "infra": "Infrastructure",
+      "social": "Social",
+      "game": "Gaming",
+      "governance": "Governance",
+      "education": "Education",
+      "tools": "Tools"
+    },
+    "skill": {
+      "dev": "Development",
+      "design": "Design",
+      "ops": "Operations",
+      "translation": "Translation",
+      "marketing": "Marketing",
+      "research": "Research",
+      "product": "Product",
+      "community": "Community",
+      "writing": "Writing",
+      "security": "Security"
+    }
+  },
+  "bountyDetail": {
+    "notFound": "Bounty not found",
+    "backToList": "Back to Bounties",
+    "lifecycle": "Task Lifecycle",
+    "description": "Description",
+    "deliverables": "Deliverables",
+    "timeline": "Timeline",
+    "info": "Task Info",
+    "deadline": "Deadline",
+    "applicantsCount": "{{count}} applicants",
+    "creator": "Creator",
+    "requiredSkills": "Required Skills",
+    "apply": "Apply for Task",
+    "submitWork": "Submit Work",
+    "status": {
+      "open": "Open",
+      "applied": "Applied",
+      "in_progress": "In Progress",
+      "submitted": "Submitted",
+      "reviewing": "Reviewing",
+      "completed": "Completed",
+      "rejected": "Rejected"
+    },
+    "frontendUI": {
+      "desc": "Comprehensive frontend UI refactoring for MetaDAO website, including design system upgrade, responsive adaptation, and componentization. Required stack: React + Tailwind CSS + shadcn/ui.",
+      "d1": "Design system component library (buttons, forms, cards, etc.)",
+      "d2": "Mobile responsive adaptation",
+      "d3": "Dark/Light theme support",
+      "deadline": "April 15, 2026",
+      "t1": "Posted the bounty task 'Frontend UI Refactoring'",
+      "t1Time": "3 days ago",
+      "t2": "This task looks interesting, I have relevant experience. Can I share my technical approach?",
+      "t2Time": "2 days ago"
+    },
+    "solidityAudit": {
+      "desc": "Comprehensive post-audit verification of Uniswap V2 fork contracts, confirming fixed vulnerabilities and testing edge cases.",
+      "d1": "Complete audit verification report",
+      "d2": "Automated test suite covering all fixed items",
+      "deadline": "May 1, 2026",
+      "t1": "Posted the security audit verification task",
+      "t1Time": "2 months ago",
+      "t2": "Applied: 3 years of Solidity security audit experience",
+      "t2Time": "1 month ago",
+      "t3": "Accepted hamzat_iii's application",
+      "t3Time": "3 weeks ago"
+    }
+  },
+  "contrib": {
+    "timelineTitle": "Contribution Log",
+    "type": {
+      "task": "Task",
+      "proposal": "Proposal",
+      "governance": "Governance",
+      "community": "Community",
+      "review": "Review",
+      "education": "Education"
+    },
+    "task": {
+      "frontendUI": "Completed Frontend UI Refactoring",
+      "frontendUIDesc": "Completed comprehensive frontend refactoring for MetaDAO website including componentization and responsive adaptation",
+      "translation": "Completed Korean Translation"
+    },
+    "proposal": {
+      "treasury": "Submitted Treasury Allocation Proposal",
+      "treasuryDesc": "Submitted and passed a proposal to increase community treasury allocation to ¥50,000",
+      "incentive": "Submitted Incentive Plan Proposal"
+    },
+    "governance": {
+      "voted": "Voted on 3 Proposals"
+    },
+    "community": {
+      "onboarding": "Organized New Member Onboarding",
+      "onboardingDesc": "Provided onboarding guidance and tool training for 5 new contributors"
+    },
+    "review": {
+      "auditReview": "Reviewed Security Audit Report"
+    },
+    "education": {
+      "workshop": "Hosted Web3 Development Workshop",
+      "workshopDesc": "Hosted a Solidity introductory workshop for community members, 20 attendees"
+    },
+    "date": {
+      "mar15": "Mar 15",
+      "mar12": "Mar 12",
+      "mar10": "Mar 10",
+      "mar08": "Mar 8",
+      "mar05": "Mar 5",
+      "feb28": "Feb 28",
+      "feb20": "Feb 20",
+      "feb15": "Feb 15"
+    },
+    "status": {
+      "completed": "Completed",
+      "passed": "Passed",
+      "voted": "Voted",
+      "approved": "Approved"
+    }
+  },
+  "bookmarks": {
+    "title": "My Bookmarks",
+    "subtitle": "Saved DAOs, bounties, and proposals",
+    "searchPlaceholder": "Search bookmarks…",
+    "filter": {
+      "all": "All",
+      "dao": "DAO",
+      "bounty": "Bounty",
+      "proposal": "Proposal"
+    },
+    "type": {
+      "dao": "DAO",
+      "bounty": "Bounty",
+      "proposal": "Proposal"
+    },
+    "empty": "No bookmarks yet. Save items while browsing.",
+    "item": {
+      "peaq": "peaq Network",
+      "peaqDesc": "DePIN network powering the Economy of Things",
+      "frontendBounty": "Frontend UI Component Development",
+      "frontendBountyDesc": "Build DAO governance panel UI components with React + Tailwind",
+      "treasuryProposal": "Increase Community Treasury Allocation",
+      "treasuryProposalDesc": "Propose increasing treasury allocation from ¥5,000 to ¥10,000",
+      "gitcoin": "Gitcoin DAO",
+      "gitcoinDesc": "Public goods funding and open-source ecosystem building",
+      "smartContractBounty": "Smart Contract Security Audit",
+      "smartContractBountyDesc": "Comprehensive security audit and vulnerability fixes for governance contracts"
+    },
+    "time": {
+      "1d": "Saved 1 day ago",
+      "2d": "Saved 2 days ago",
+      "3d": "Saved 3 days ago",
+      "5d": "Saved 5 days ago",
+      "1w": "Saved 1 week ago"
+    }
+  },
+  "common": {
+    "cancel": "Cancel",
+    "back": "Back",
+    "next": "Next",
+    "confirm": "Confirm"
+  },
+  "lineage": {
+    "title": "Organization Lineage",
+    "subtitle": "View the differentiation history and kinship of this organization",
+    "noData": "No lineage data available",
+    "origin": "Parent Organization",
+    "current": "Current Organization",
+    "children": "Branch Organizations",
+    "members": "members",
+    "forkReason": "Fork Reason",
+    "inherited": "Inherited",
+    "lifecycle": {
+      "incubating": "Incubating",
+      "active": "Active",
+      "dormant": "Dormant",
+      "archived": "Archived"
+    },
+    "relation": {
+      "project": "Project Branch",
+      "regional": "Regional Branch",
+      "functional": "Functional Branch",
+      "ideological": "Ideological Branch",
+      "experimental": "Experimental Branch"
+    },
+    "inherit": {
+      "mission": "Mission & Vision",
+      "members": "Member Roster",
+      "knowledgeBase": "Knowledge Base",
+      "treasury": "Treasury",
+      "reputation": "Reputation Records",
+      "federation": "Federation Protocol"
+    }
+  },
+  "fork": {
+    "button": "Fork DAO",
+    "ctaTitle": "Start a new journey from this DAO?",
+    "ctaDesc": "Forking carries over the consensus, governance rules, or collaboration network you choose as the seed of the new organization.",
+    "title": "Create Branch Organization",
+    "subtitle": "Fork a new autonomous organization from {{name}}",
+    "step": {
+      "basic": "Basic Info",
+      "inherit": "Inheritance",
+      "confirm": "Confirm"
+    },
+    "name": "Organization Name",
+    "namePlaceholder": "Enter name for the new organization",
+    "relation": "Relation Type",
+    "reason": "Fork Reason",
+    "reasonPlaceholder": "Briefly describe the motivation and goals",
+    "inheritDesc": "Select elements to inherit from the parent organization",
+    "summary": "Fork Summary",
+    "parent": "Parent",
+    "inheritItems": "Inherited Items",
+    "confirm": "Confirm Fork"
+  },
+  "crossDAO": {
+    "title": "Cross-DAO Identity",
+    "daoCount": "Active in {{count}} DAOs",
+    "avgReputation": "Avg Reputation {{value}}",
+    "relationships": "relationships",
+    "relationshipHint": "A role is not a fixed human label. It is a relationship formed between a person and a specific organization.",
+    "role": {
+      "coreContributor": "Core Contributor",
+      "ambassador": "Ambassador",
+      "reviewer": "Reviewer",
+      "contributor": "Contributor",
+      "moderator": "Moderator"
+    }
+  },
+  "subDao": {
+    "notFound": "Sub-organization not found",
+    "backHome": "Back to home",
+    "partOf": "Part of",
+    "memberCount": "{{count}} members",
+    "since": "Created in 2024",
+    "budget": "$120K budget",
+    "description": "This sub-organization handles a specific domain of development and operations with independent governance and bounty systems.",
+    "desc": {
+      "gitcoin-grants": "Manages and distributes Gitcoin grant rounds, supporting sustainable development of open-source public goods.",
+      "gitcoin-passport": "Builds decentralized identity verification protocols, providing Sybil resistance for the Web3 ecosystem.",
+      "gitcoin-allo": "Develops capital allocation protocols enabling communities to distribute resources efficiently and transparently.",
+      "bankless-media": "Produces podcasts, newsletters, and educational content promoting the bankless lifestyle.",
+      "bankless-consulting": "Provides governance, tokenomics, and operational consulting for DAOs and Web3 projects."
+    }
+  },
+  "location": {
+    "searchPlaceholder": "Search location…",
+    "global": "Global",
+    "allOf": "All {{name}}",
+    "noResults": "No matching locations",
+    "asia": "Asia",
+    "cn": "China",
+    "cn-beijing": "Beijing",
+    "cn-shanghai": "Shanghai",
+    "cn-guangzhou": "Guangzhou",
+    "cn-shenzhen": "Shenzhen",
+    "cn-hangzhou": "Hangzhou",
+    "cn-chengdu": "Chengdu",
+    "cn-nanjing": "Nanjing",
+    "cn-suzhou": "Suzhou",
+    "cn-ordos": "Ordos",
+    "cn-ordos-dongsheng": "Dongsheng",
+    "cn-ordos-kangbashi": "Kangbashi",
+    "jp": "Japan",
+    "jp-tokyo": "Tokyo",
+    "in": "India",
+    "in-bangalore": "Bangalore",
+    "sea": "Southeast Asia",
+    "kr": "South Korea",
+    "europe": "Europe",
+    "de": "Germany",
+    "de-berlin": "Berlin",
+    "fr": "France",
+    "uk": "United Kingdom",
+    "nl": "Netherlands",
+    "northAmerica": "North America",
+    "us": "United States",
+    "ca": "Canada",
+    "southAmerica": "South America",
+    "africa": "Africa",
+    "ng": "Nigeria",
+    "ng-lagos": "Lagos",
+    "middleEast": "Middle East",
+    "oceania": "Oceania"
+  },
+  "filter": {
+    "mode": "Participation Mode",
+    "modeAll": "All",
+    "modeOnline": "Online",
+    "modeOffline": "Offline",
+    "modeHybrid": "Hybrid"
+  }
+}
