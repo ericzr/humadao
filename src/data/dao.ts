@@ -14,14 +14,6 @@ const profiles: Record<string, DAOProfile> = {
     values: { love: 54, commons: 76, justice: 68, truth: 83, valueCreation: 92, freedom: 58, order: 72 },
     spectrum: { visionVsTask: 66, coreAuthVsBroadGov: 40, longVsShort: 60 },
   },
-  "agent-market": {
-    values: { love: 42, commons: 66, justice: 61, truth: 78, valueCreation: 94, freedom: 74, order: 64 },
-    spectrum: { visionVsTask: 72, coreAuthVsBroadGov: 44, longVsShort: 46 },
-  },
-  "agent-farm": {
-    values: { love: 54, commons: 76, justice: 68, truth: 83, valueCreation: 92, freedom: 58, order: 72 },
-    spectrum: { visionVsTask: 66, coreAuthVsBroadGov: 40, longVsShort: 60 },
-  },
   "protocol-crowdsourcing": {
     values: { love: 45, commons: 78, justice: 74, truth: 76, valueCreation: 90, freedom: 82, order: 58 },
     spectrum: { visionVsTask: 64, coreAuthVsBroadGov: 62, longVsShort: 52 },

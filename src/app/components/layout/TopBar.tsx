@@ -13,6 +13,7 @@ import { useTranslation } from "react-i18next";
 import { useWallet } from "@/contexts/WalletContext";
 import { WalletConnectDialog } from "../wallet/WalletConnectDialog";
 import { WalletInfoPopover } from "../wallet/WalletInfoPopover";
+import { TopNotifications } from "./TopNotifications";
 
 const languages = [
   { code: "zh", label: "中文" },
@@ -34,6 +35,8 @@ export function TopBar() {
         <Separator orientation="vertical" className="mr-1 h-4 md:hidden shrink-0" />
 
         <div className="flex-1 min-w-0" />
+
+        <TopNotifications />
 
         <button
           onClick={() => {

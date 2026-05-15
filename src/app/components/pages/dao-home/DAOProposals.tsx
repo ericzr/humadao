@@ -1,17 +1,11 @@
 import { useParams } from "react-router";
 import { useTranslation } from "react-i18next";
 import { Card } from "../../ui/card";
-import { Badge } from "../../ui/badge";
-import { Progress } from "../../ui/progress";
-import { Gavel, Users, Clock, CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Clock, Gavel, Users } from "lucide-react";
+import { ProposalSummaryCard } from "../../shared/ProposalSummaryCard";
+import { proposals } from "@/data";
 import { findDAOById } from "@/data/dao";
 import { useDAOModuleConfig } from "@/app/hooks/useDAOModuleConfig";
-
-const proposals = [
-  { titleKey: "dao.proposal.treasury" as const, statusKey: "dao.proposal.treasuryStatus" as const, votes: { for: 72, against: 18 }, deadlineKey: "dao.proposal.treasuryDeadline" as const },
-  { titleKey: "dao.proposal.incentive" as const, statusKey: "dao.proposal.incentiveStatus" as const, votes: { for: 91, against: 5 }, deadlineKey: "dao.proposal.incentiveDeadline" as const },
-  { titleKey: "dao.proposal.grading" as const, statusKey: "dao.proposal.gradingStatus" as const, votes: { for: 0, against: 0 }, deadlineKey: "dao.proposal.gradingDeadline" as const },
-];
 
 export function DAOProposals() {
   const { t } = useTranslation();
@@ -24,6 +18,7 @@ export function DAOProposals() {
   const quorum = config?.quorumPct;
   const votingDays = config?.votingDays;
   const approval = config?.approvalPct;
+  const daoProposals = proposals.filter((proposal) => proposal.daoId === id);
 
   return (
     <>
@@ -57,24 +52,14 @@ export function DAOProposals() {
       )}
 
       <div className="space-y-3">
-        {proposals.map((p) => (
-          <Card key={p.titleKey} className="bg-card border-border p-4">
-            <div className="flex items-center justify-between mb-2">
-              <span>{t(p.titleKey)}</span>
-              <Badge className="bg-secondary text-muted-foreground border-0">{t(p.statusKey)}</Badge>
-            </div>
-            {p.votes.for > 0 && (
-              <div className="mt-2">
-                <div className="flex justify-between text-muted-foreground mb-1 text-xs">
-                  <span>{t("dao.for")} {p.votes.for}%</span>
-                  <span>{t("dao.against")} {p.votes.against}%</span>
-                </div>
-                <Progress value={p.votes.for} className="h-1.5" />
-              </div>
-            )}
-            <p className="text-muted-foreground mt-2 text-xs">{t(p.deadlineKey)}</p>
-          </Card>
+        {daoProposals.map((p) => (
+          <ProposalSummaryCard key={p.id} proposal={p} compact showDao={false} />
         ))}
+        {daoProposals.length === 0 && (
+          <Card className="border-dashed bg-card/50 p-6 text-center text-sm text-muted-foreground">
+            {t("dao.proposalsEmpty")}
+          </Card>
+        )}
       </div>
     </>
   );

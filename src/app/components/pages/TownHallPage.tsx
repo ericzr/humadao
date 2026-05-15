@@ -48,6 +48,10 @@ function applyFilters(daos: DAO[], search: string, filters: TownHallFilterState,
     result = result.filter((d) => d.mode === filters.mode);
   }
 
+  if (filters.lifecycle !== "all") {
+    result = result.filter((d) => d.lifecycle === filters.lifecycle);
+  }
+
   if (locationId) {
     result = result.filter((d) => isLocationMatch(d.locationId, locationId) || isLocationMatch(d.region, locationId));
   }
@@ -74,7 +78,8 @@ export function TownHallPage() {
   const activeFilterCount =
     (filters.valueDim ? 1 : 0) +
     Object.keys(filters.spectrumSelections).length +
-    (filters.mode !== "all" ? 1 : 0);
+    (filters.mode !== "all" ? 1 : 0) +
+    (filters.lifecycle !== "all" ? 1 : 0);
 
   const toggleSort = useCallback((field: SortField) => {
     setFilters((prev) => {

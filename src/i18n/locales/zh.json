@@ -49,7 +49,7 @@
     "townHall": "市政厅",
     "bounties": "赏金池",
     "contributors": "贡献者",
-    "workspace": "我的工作台",
+    "workspace": "工作台",
     "governance": "治理中心",
     "chat": "协作中心",
     "bookmarks": "书签",
@@ -143,6 +143,11 @@
     "subtitle": "探索共识组织、赏金与优秀贡献者",
     "clusterTitle": "现实议题入口",
     "searchPlaceholder": "搜索 DAO、赏金、贡献者...",
+    "position": {
+      "eyebrow": "发现页定位",
+      "desc": "这里展示精选议题、热门组织、赏金机会与贡献者动态；需要完整目录、多维筛选和区域定位时，进入市政厅。",
+      "townHall": "进入市政厅"
+    },
     "trendingDAO": "热门 DAO",
     "hotBounties": "热门赏金",
     "topContributors": "顶级贡献者",
@@ -224,11 +229,6 @@
         "africa": "非洲",
         "oceania": "大洋洲"
       }
-    },
-    "quick": {
-      "active": "正在运行的项目",
-      "incubating": "正在孵化的项目",
-      "offline": "支持线下或混合协作"
     },
     "dao": {
       "luboomReactor": "真知沉淀 - Luboom 反应器",
@@ -471,6 +471,55 @@
     "totalPaid": "总计支付：4036.88 美元",
     "follow": "跟随",
     "roleInfo": "以下角色赋予您访问此组织内特定权限和私有空间的权限。",
+    "productTab": {
+      "overview": "概览",
+      "tasks": "任务",
+      "governance": "治理",
+      "knowledge": "知识",
+      "organization": "组织"
+    },
+    "overview": {
+      "title": "先从一件可参与的事开始",
+      "nextStep": "下一步",
+      "fit": "适合谁加入",
+      "findTask": "查看任务",
+      "vote": "参与治理",
+      "discuss": "进入讨论"
+    },
+    "productPage": {
+      "empty": "这个视图暂未启用可展示模块。",
+      "tasks": {
+        "title": "任务与贡献入口",
+        "desc": "集中查看这个 DAO 的赏金、看板、活动和贡献模块，帮助成员快速找到可以参与的行动。",
+        "primary": "查看本组织赏金"
+      },
+      "governance": {
+        "title": "治理与决策",
+        "desc": "把提案、预算、宪章和高级治理模块放在同一处，让成员理解当前有哪些决策需要关注。",
+        "primary": "查看本组织治理"
+      },
+      "knowledge": {
+        "title": "知识与进展",
+        "desc": "沉淀讨论、阶段更新、文档和外部协作空间，避免知识只停留在聊天流里。",
+        "primary": "查看知识模块"
+      },
+      "organization": {
+        "title": "组织结构",
+        "desc": "查看这个 DAO 的谱系、子组织和分叉关系，理解它如何从母体继承、分化和协作。",
+        "primary": "查看组织谱系"
+      },
+      "metric": {
+        "openTasks": "开放任务",
+        "activeContributors": "活跃贡献者",
+        "enabledModules": "启用模块",
+        "activeProposals": "活跃提案",
+        "voterTurnout": "参与率",
+        "documents": "文档",
+        "updates": "进展",
+        "members": "成员",
+        "subOrgs": "子组织"
+      }
+    },
     "showcase": {
       "vision": "愿景",
       "consensus": "共识",
@@ -579,6 +628,7 @@
     },
     "tasks": "个任务",
     "proposals": "提案",
+    "proposalsEmpty": "这个组织暂无公开提案。",
     "proposal": {
       "treasury": "增加社区国库拨款至 ¥50,000",
       "treasuryStatus": "投票中",
@@ -663,6 +713,13 @@
     "joinPending": "申请中...",
     "joined": "已加入",
     "memberBadge": "成员",
+    "sidePanel": {
+      "profile": "协作画像",
+      "structure": "组织状态",
+      "stage": "阶段",
+      "relation": "关系",
+      "lineageHint": "完整谱系、分叉和继承关系在组织 Tab 中查看。"
+    },
     "moduleSettings": {
       "entry": "模块设置",
       "back": "返回",
@@ -744,6 +801,51 @@
   },
   "profile": {
     "bio": "软件工程师 | Web3 | 播客主持人 - 精通英语、阿拉伯语和法语",
+    "about": "简介",
+    "editBio": "编辑简介",
+    "saveBio": "保存简介",
+    "editProfile": "编辑资料",
+    "saveProfile": "保存资料",
+    "bioEditHint": "用一小段话说明你的协作范围、擅长角色和希望被如何联系。",
+    "profileEditHint": "维护你的公开协作资料。这里的修改会先在本地即时预览，后续可接入链上身份或个人资料存储。",
+    "bioPlaceholder": "写下你当前的协作方向、擅长的角色和希望被如何邀请。",
+    "editSection": {
+      "basic": "基础信息",
+      "about": "协作介绍",
+      "capability": "能力与语言",
+      "media": "媒体绑定"
+    },
+    "displayName": "显示名称",
+    "availabilityStatus": "协作状态",
+    "availability": {
+      "open": "开放协作",
+      "selective": "选择性协作",
+      "focused": "专注当前",
+      "unavailable": "暂不协作"
+    },
+    "availabilityDesc": {
+      "open": "愿意接收新的 DAO、项目、任务或共创邀请。",
+      "selective": "只接受高度匹配的邀请，例如特定领域、短期项目或熟人推荐。",
+      "focused": "主要精力在已有协作中，仍可查看重要邀请。",
+      "unavailable": "当前不接收新的协作邀请。"
+    },
+    "languagePlaceholder": "添加语言",
+    "addLanguage": "添加",
+    "removeLanguage": "移除 {{language}}",
+    "customSkillPlaceholder": "添加自定义技能标签",
+    "addCustomSkill": "添加",
+    "removeCustomSkill": "移除 {{skill}}",
+    "mediaUrlPlaceholder": "粘贴链接",
+    "addMediaLink": "添加媒体链接",
+    "removeMediaLink": "移除媒体链接",
+    "linkType": {
+      "github": "GitHub",
+      "website": "网站",
+      "twitter": "X",
+      "linkedin": "LinkedIn",
+      "telegram": "Telegram",
+      "external": "其他"
+    },
     "international": "国际的",
     "reputationScore": "声誉评分",
     "earnings": "收益",
@@ -757,6 +859,23 @@
     "rolePortfolio": "角色组合",
     "skillPortfolio": "技能组合",
     "currentFootprint": "当前协作足迹",
+    "daoOverview": "DAO 协作概览",
+    "daoOverviewHint": "按组织呈现角色、协作状态与贡献领域。",
+    "participatingOrganizations": "参与组织",
+    "participatingOrganizationsHint": "按组织呈现角色、协作状态与贡献领域。",
+    "daoActive": "协作中",
+    "daoPast": "曾参与",
+    "contributionPackages": "贡献包记录",
+    "contributionPackagesHint": "用统一格式记录贡献类型、所属组织、结果与状态。",
+    "contributionArchive": "贡献档案",
+    "contributionArchiveHint": "集中查看贡献记录，可在块状列表和时间序列之间切换。",
+    "archiveView": {
+      "list": "列表",
+      "timeline": "时间线"
+    },
+    "proposals": "提案",
+    "proposalsHint": "集中查看发起、参与或治理相关的提案记录。",
+    "proposalsEmpty": "{{name}} 暂无公开提案记录。",
     "rep": {
       "last6Months": "近 6 个月趋势",
       "showBreakdown": "查看声誉分解",
@@ -784,7 +903,10 @@
       "writing": "写作",
       "works": "作品与贡献",
       "timeline": "贡献档案",
-      "daos": "DAO 协作关系"
+      "daos": "DAO 协作关系",
+      "organizations": "参与组织",
+      "contributions": "贡献档案",
+      "proposals": "提案记录"
     }
   },
   "workspace": {
@@ -799,8 +921,199 @@
     "viewAll": "查看全部 →",
     "pendingProposals": "待投票提案",
     "notifications": "通知",
+    "notificationUnread": "{{count}} 条未读",
+    "notificationClear": "暂无未读",
     "markAllRead": "全部已读",
     "quickLinks": "快捷入口",
+    "space": {
+      "eyebrow": "个人协作空间",
+      "desc": "把你在不同 DAO 里的任务、治理、贡献和组织关系收拢到一个可切换的工作空间中。",
+      "newProject": "发起项目"
+    },
+    "views": {
+      "today": "今日",
+      "items": "协作事项",
+      "tasks": "任务",
+      "votes": "投票",
+      "contrib": "贡献",
+      "daos": "组织",
+      "votesDesc": "需要你参与表决或持续关注的治理事项。"
+    },
+    "items": {
+      "title": "协作事项",
+      "desc": "把任务、投票和待确认事项放进同一张数据库里，通过视图切换选择当前最适合的工作方式。",
+      "search": "搜索事项或组织",
+      "empty": "没有符合条件的协作事项",
+      "emptyColumn": "暂无事项",
+      "metric": {
+        "tasks": "{{count}} 个待处理任务",
+        "votes": "{{count}} 个治理待处理"
+      },
+      "stage": {
+        "all": "全部",
+        "open": "待处理",
+        "inProgress": "进行中",
+        "review": "待确认",
+        "done": "已完成"
+      },
+      "layout": {
+        "list": "列表",
+        "board": "看板"
+      },
+      "kind": {
+        "task": "任务",
+        "vote": "投票"
+      },
+      "kindFilter": {
+        "all": "全部类型",
+        "task": "任务",
+        "vote": "投票"
+      },
+      "board": {
+        "open": "待处理",
+        "inProgress": "进行中",
+        "review": "待确认",
+        "done": "已完成"
+      },
+      "columns": {
+        "item": "事项",
+        "kind": "类型",
+        "dao": "组织",
+        "status": "状态",
+        "deadline": "截止"
+      }
+    },
+    "today": {
+      "eyebrow": "今日行动",
+      "title": "先处理这些协作事项",
+      "desc": "把任务、投票和贡献记录集中到一个队列里，避免在多个页面之间来回寻找。",
+      "continueTask": "继续任务",
+      "voteNow": "待投票",
+      "reviewContribution": "待确认"
+    },
+    "contribStatus": {
+      "title": "贡献闭环",
+      "desc": "记录任务以外的劳动，并跟踪它们从确认到结算的状态。",
+      "pendingReview": "待确认贡献",
+      "confirmed": "已确认贡献",
+      "pendingSettle": "待结算收益"
+    },
+    "database": {
+      "title": "任务数据库",
+      "desc": "像协作文档数据库一样查看所有任务，先用表格判断优先级，再切到看板推进状态。",
+      "search": "搜索任务或 DAO",
+      "table": "表格",
+      "board": "看板",
+      "empty": "没有符合条件的任务",
+      "filter": {
+        "all": "全部",
+        "open": "待领取",
+        "inProgress": "进行中",
+        "review": "待审核",
+        "done": "已完成"
+      },
+      "columns": {
+        "task": "任务",
+        "dao": "DAO",
+        "status": "状态",
+        "deadline": "截止",
+        "reward": "奖励",
+        "action": "下一步"
+      },
+      "action": {
+        "apply": "查看机会",
+        "continue": "继续推进",
+        "review": "查看审核",
+        "archive": "查看记录"
+      }
+    },
+    "contribDatabase": {
+      "title": "贡献数据库",
+      "desc": "把非标准劳动、任务贡献和待结算记录放在同一张表里，方便确认、复盘和结算。",
+      "search": "搜索贡献或 DAO",
+      "empty": "没有符合条件的贡献记录",
+      "filter": {
+        "all": "全部",
+        "draft": "草稿",
+        "pending": "待确认",
+        "confirmed": "已确认",
+        "settleable": "可结算",
+        "settled": "已结算"
+      },
+      "metric": {
+        "pending": "待确认记录",
+        "hours": "已确认时长",
+        "settleable": "可结算金额"
+      },
+      "columns": {
+        "record": "贡献记录",
+        "dao": "DAO",
+        "type": "类型",
+        "status": "状态",
+        "hours": "时长",
+        "reward": "奖励",
+        "action": "下一步"
+      },
+      "type": {
+        "coordination": "协调",
+        "education": "教育",
+        "community": "社区",
+        "documentation": "文档",
+        "content": "内容",
+        "review": "评审"
+      },
+      "status": {
+        "draft": "草稿",
+        "pending": "待确认",
+        "confirmed": "已确认",
+        "settleable": "可结算",
+        "settled": "已结算"
+      },
+      "action": {
+        "draft": "继续编辑",
+        "pending": "查看进度",
+        "confirmed": "等待结算",
+        "settleable": "申请结算",
+        "settled": "查看记录"
+      }
+    },
+    "daoDatabase": {
+      "title": "组织关系数据库",
+      "desc": "把你参与、关注和暂缓的 DAO 放在同一张表里，快速判断角色、任务、贡献和治理责任。",
+      "search": "搜索 DAO 或角色",
+      "empty": "没有符合条件的组织关系",
+      "findMore": "发现更多组织",
+      "open": "进入",
+      "filter": {
+        "all": "全部",
+        "active": "活跃",
+        "watching": "关注中",
+        "paused": "暂缓"
+      },
+      "status": {
+        "active": "活跃",
+        "watching": "关注中",
+        "paused": "暂缓"
+      },
+      "metric": {
+        "active": "活跃组织",
+        "tasks": "组织内任务",
+        "votes": "待处理治理"
+      },
+      "columns": {
+        "dao": "组织",
+        "role": "我的角色",
+        "status": "关系状态",
+        "tasks": "任务",
+        "contrib": "贡献",
+        "activity": "最近动态",
+        "action": "入口"
+      },
+      "short": {
+        "tasks": "任务",
+        "votes": "治理"
+      }
+    },
     "link": {
       "bounties": "浏览赏金",
       "governance": "治理中心",
@@ -817,12 +1130,16 @@
     "tasks": "个任务",
     "status": {
       "open": "待领取",
+      "pendingStart": "待开始",
+      "assigned": "待接受",
       "inProgress": "进行中",
       "review": "待审核",
       "done": "已完成"
     },
     "kanban": {
       "title": "协作看板",
+      "focusTitle": "当前任务",
+      "focusDesc": "只显示正在推进和等待确认的任务，减少今日视图中的噪音。",
       "open": "待领取",
       "inProgress": "进行中",
       "review": "待审核",
@@ -844,6 +1161,181 @@
       "contractDeadline": "1 周后",
       "discord": "Discord 机器人配置",
       "discordDeadline": "已完成"
+    },
+    "taskDetail": {
+      "back": "返回工作台",
+      "notFound": "没有找到这个任务",
+      "commentPlaceholder": "补充进展、问题或需要组织确认的事项...",
+      "section": {
+        "context": "任务背景",
+        "checklist": "交付清单",
+        "package": "标准贡献包",
+        "evidence": "验证入口",
+        "activity": "活动与讨论",
+        "status": "任务状态",
+        "people": "协作角色",
+        "tags": "标签"
+      },
+      "side": {
+        "status": "当前状态",
+        "deadline": "时间",
+        "reward": "奖励",
+        "priority": "优先级",
+        "settlement": "结算方式",
+        "assignee": "执行人",
+        "reviewer": "审核人",
+        "confirmer": "确认组织"
+      },
+      "next": {
+        "title": "下一步",
+        "desc": "提交成果后，可同步生成贡献包，进入组织确认与结算流程。",
+        "submit": "提交成果"
+      },
+      "action": {
+        "accept": "接受任务",
+        "start": "开始任务",
+        "submit": "提交成果",
+        "supplement": "补充材料",
+        "viewRecord": "查看记录"
+      },
+      "package": {
+        "hint": "任务交付也使用统一贡献包，保证不同贡献形态都能被记录、验证和确认。",
+        "open": "记录贡献包",
+        "defaultSummary": "任务交付贡献包",
+        "submitted": "已提交成果，可继续补充贡献包与验证入口。",
+        "work": "做了什么",
+        "workDesc": "记录具体工作、投入范围和关键过程。",
+        "outcome": "留下什么",
+        "outcomeDesc": "交付物、文档、决策记录、流程或可复用资产。",
+        "verification": "如何验证",
+        "verificationDesc": "链接、截图、文件、会议纪要、链上记录或组织内记录。"
+      },
+      "priority": {
+        "high": "高",
+        "normal": "普通",
+        "low": "低"
+      },
+      "settlement": {
+        "rewardAfterConfirm": "确认后结算",
+        "recordFirst": "先归档记录",
+        "pendingConfirm": "待确认后结算",
+        "settled": "已结算"
+      },
+      "source": {
+        "productSprint": "产品迭代",
+        "governance": "治理研究",
+        "daoTask": "组织任务",
+        "knowledge": "知识库",
+        "automation": "自动化维护"
+      },
+      "time": {
+        "today": "今天",
+        "yesterday": "昨天",
+        "twoDaysAgo": "2 天前",
+        "threeDaysAgo": "3 天前",
+        "lastWeek": "上周"
+      },
+      "design": {
+        "objective": "把元游戏下一阶段的核心协作流程整理成可评审的产品原型，帮助组织成员理解任务、提案和贡献记录之间的关系。",
+        "context": "这个任务来自产品迭代讨论，需要在不增加复杂度的前提下，把工作台中的任务详情、贡献包和组织确认流程串起来。",
+        "check": {
+          "1": "梳理任务详情页的核心信息结构和右侧元信息。",
+          "2": "输出低保真原型，覆盖待开始、进行中、待确认三类状态。",
+          "3": "标注任务完成后如何进入贡献包与组织确认。"
+        },
+        "evidence": {
+          "1": "Figma 原型链接或截图编号。",
+          "2": "产品讨论记录与评审意见。"
+        },
+        "activity": {
+          "1": "将产品原型任务分配给 Sero。",
+          "2": "确认会先输出低保真结构，再进入视觉细化。"
+        }
+      },
+      "research": {
+        "objective": "整理 Nation3 治理机制中的任务分配、提案参与和贡献确认方式，形成可供 HumaDAO 借鉴的研究记录。",
+        "context": "该任务不是开放赏金，而是组织分配给成员的研究事项，完成后需要进入知识库与贡献档案。",
+        "check": {
+          "1": "拆解治理流程中的角色、权限和确认路径。",
+          "2": "整理对 HumaDAO 工作台和任务详情页有参考价值的部分。",
+          "3": "输出一份研究摘要并附验证链接。"
+        },
+        "evidence": {
+          "1": "研究文档链接。",
+          "2": "引用来源与截图记录。"
+        },
+        "activity": {
+          "1": "Nation3 治理小组把研究任务分配给 Sero。"
+        }
+      },
+      "frontend": {
+        "objective": "完成工作台任务数据库的前端组件细化，让列表、看板和任务详情入口在桌面与移动端都保持清晰。",
+        "context": "当前工作台已经从分散模块收敛为协作事项数据库，需要继续把任务行、看板卡片和详情页串成完整体验。",
+        "check": {
+          "1": "优化列表行和看板卡片在移动端的宽度适配。",
+          "2": "确保任务入口进入组织内任务详情，而不是外部赏金池。",
+          "3": "补齐任务详情页的提交、确认和活动讨论区域。"
+        },
+        "evidence": {
+          "1": "前端提交记录或本地构建结果。",
+          "2": "移动端与桌面端截图。"
+        },
+        "activity": {
+          "1": "peaq 创建了前端组件任务。",
+          "2": "Sero 开始推进组件结构。",
+          "3": "维护者提醒需要优先修复移动端适配。"
+        }
+      },
+      "contract": {
+        "objective": "完成智能合约测试用例补充，覆盖核心交互、异常路径和基础安全边界。",
+        "context": "该任务属于元游戏技术组的内部交付，需要保留测试记录，方便后续审核。",
+        "check": {
+          "1": "补齐主要合约方法的正常路径测试。",
+          "2": "补齐权限、边界值和失败路径测试。",
+          "3": "整理测试结果和未覆盖风险。"
+        },
+        "evidence": {
+          "1": "测试报告或 CI 链接。",
+          "2": "关键失败用例与修复记录。"
+        },
+        "activity": {
+          "1": "Sero 已开始整理测试用例。"
+        }
+      },
+      "docs": {
+        "objective": "更新社区文档，使新成员能够理解组织入口、贡献记录和任务确认流程。",
+        "context": "任务已经提交，正在等待莱克斯DAO 文档维护者确认。",
+        "check": {
+          "1": "更新入门说明。",
+          "2": "补充贡献记录示例。",
+          "3": "标出仍需组织确认的部分。"
+        },
+        "evidence": {
+          "1": "文档变更链接。",
+          "2": "待确认段落清单。"
+        },
+        "activity": {
+          "1": "Sero 提交了社区文档更新。",
+          "2": "维护者开始审核文档结构。"
+        }
+      },
+      "discord": {
+        "objective": "完成 Discord 机器人基础配置，让社区提醒、任务更新和投票通知可以自动触达成员。",
+        "context": "任务已完成并结算，保留配置记录用于后续复用。",
+        "check": {
+          "1": "配置任务提醒频道。",
+          "2": "配置投票通知模板。",
+          "3": "完成一次真实通知测试。"
+        },
+        "evidence": {
+          "1": "机器人配置截图。",
+          "2": "通知测试记录。"
+        },
+        "activity": {
+          "1": "Sero 提交了机器人配置记录。",
+          "2": "peaq 社区运营确认任务完成。"
+        }
+      }
     },
     "vote": {
       "treasury": "增加社区国库拨款",
@@ -874,7 +1366,14 @@
     },
     "contrib": {
       "logTitle": "记录贡献",
-      "logDesc": "记录任务以外的非标准劳动贡献，包括协调、教育、社区维护等",
+      "logDesc": "用统一的贡献包记录非标准劳动、任务交付和线下协作，并提交给组织确认。",
+      "packageTitle": "标准贡献包",
+      "packageDesc": "所有贡献都用同一套结构表达：做了什么、留下了什么结果、哪里可以验证，然后进入组织确认或结算评估。",
+      "trust": {
+        "self": "自我记录",
+        "package": "贡献包",
+        "org": "组织确认"
+      },
       "typeLabel": "贡献类型",
       "types": {
         "coordination": "协调与组织",
@@ -890,11 +1389,40 @@
       "hoursLabel": "投入时长（小时）",
       "summaryLabel": "贡献说明",
       "summaryPlaceholder": "描述你具体做了什么，产生了什么影响...",
+      "outcomeLabel": "贡献结果",
+      "outcomePlaceholder": "写下这次贡献最终留下了什么：交付物、流程、关系、服务结果、决策记录或知识沉淀。",
+      "verificationLabel": "验证入口",
+      "verificationPlaceholder": "填写可追溯线索：链接、文件名、截图编号、会议纪要、活动记录、链上记录或组织内可查的记录说明。",
+      "requestLabel": "提交后处理",
+      "requests": {
+        "record": "仅归档",
+        "confirm": "请求确认",
+        "settle": "申请结算"
+      },
       "submit": "提交记录",
       "submitting": "提交中...",
       "success": "贡献已记录",
-      "successDesc": "感谢你的贡献，记录已提交，待 DAO 管理员审核确认后将纳入信誉评分。",
-      "requiredHint": "类型、DAO 和说明为必填项"
+      "successDesc": "贡献包已提交，组织可根据验证入口进行确认，并决定是否进入声誉或结算流程。",
+      "requiredHint": "类型、DAO、说明、结果和验证入口为必填项"
+    },
+    "contribRecord": {
+      "protocol": "整理 Luboom 反应器协作协议",
+      "protocolDate": "今天",
+      "frontend": "评审协议型众包平台前端交付",
+      "frontendDate": "昨天",
+      "onboarding": "开放大学新成员入组导览",
+      "onboardingDate": "3 天前",
+      "community": "社区化养老志愿者回访",
+      "communityDate": "上周",
+      "notes": "可视化书籍共创笔记草稿",
+      "notesDate": "草稿"
+    },
+    "daoRelation": {
+      "luboomActivity": "今日有协议更新",
+      "agentMarketActivity": "昨天更新任务",
+      "protocolActivity": "待确认交付",
+      "universityActivity": "3 天前有贡献记录",
+      "eldercareActivity": "上周已结算"
     }
   },
   "governance": {
@@ -909,7 +1437,8 @@
       "voting": "投票中",
       "passed": "已通过",
       "discussion": "讨论中",
-      "rejected": "已拒绝"
+      "rejected": "已拒绝",
+      "executing": "执行中"
     },
     "createProposal": "+ 创建新提案",
     "for": "赞成",
@@ -935,7 +1464,18 @@
       "quadratic": "引入二次投票机制",
       "quadraticDesc": "提议在重大决策中使用二次投票机制，防止投票权过度集中。",
       "crossDAO": "建立跨 DAO 协作框架",
-      "crossDAODesc": "提议建立标准化的跨DAO协作框架和通信协议。"
+      "crossDAODesc": "提议建立标准化的跨DAO协作框架和通信协议。",
+      "luboomProtocol": "提交 Luboom 反应器第一版协作协议",
+      "luboomProtocolDesc": "将研究、编辑、实践三类角色接口整理成第一版最小可行动协议，并进入组织执行。",
+      "livingRules": "随心住共居支持规则讨论",
+      "livingRulesDesc": "围绕共居中的照护责任、公共空间使用和成员支持规则形成可讨论方案。",
+      "openLearning": "开放大学长期共学节奏提案",
+      "openLearningDesc": "提出季度主题、导师机制和成果沉淀方式，让长期共学形成稳定节奏。"
+    },
+    "deadline": {
+      "executing": "执行中",
+      "discussion": "讨论中",
+      "passed": "已结束"
     },
     "comment": {
       "1": "支持这个提案，对生态发展很重要。",
@@ -977,11 +1517,83 @@
   "proposalDetail": {
     "notFound": "未找到该提案",
     "backToGovernance": "返回治理中心",
+    "backToDao": "返回组织主页",
+    "backToWorkspace": "返回工作台",
     "dao": "所属 DAO",
+    "info": "提案信息",
+    "progressTitle": "治理进度",
+    "currentAction": "当前可操作",
+    "decisionRecord": "决策记录",
+    "stage": {
+      "discussion": "讨论",
+      "voting": "投票",
+      "decision": "决策",
+      "execution": "执行"
+    },
+    "action": {
+      "joinDiscussion": "参与讨论",
+      "viewDraft": "查看提案草案",
+      "updateExecution": "更新执行进展",
+      "voteDetails": "查看投票明细",
+      "executionPlan": "查看执行计划",
+      "rejectionReason": "查看未通过原因",
+      "reopenDiscussion": "重新发起讨论"
+    },
+    "record": {
+      "passed": {
+        "1": {
+          "title": "投票已通过",
+          "desc": "提案获得足够支持，可以进入执行准备。"
+        },
+        "2": {
+          "title": "等待执行计划",
+          "desc": "组织成员需要明确负责人、时间表和交付记录方式。"
+        },
+        "3": {
+          "title": "进入组织记录",
+          "desc": "该决策会保留在组织治理历史中，方便后续追溯。"
+        }
+      },
+      "executing": {
+        "1": {
+          "title": "决策已生效",
+          "desc": "提案已从投票结果进入实际执行阶段。"
+        },
+        "2": {
+          "title": "执行进展待更新",
+          "desc": "负责人需要补充关键节点、预算使用或交付状态。"
+        },
+        "3": {
+          "title": "完成后归档",
+          "desc": "执行完成后将形成可复盘的治理记录。"
+        }
+      },
+      "rejected": {
+        "1": {
+          "title": "提案未通过",
+          "desc": "当前版本没有获得足够支持，暂不进入执行。"
+        },
+        "2": {
+          "title": "保留讨论材料",
+          "desc": "反对意见和讨论内容会保留，供后续重新修订。"
+        },
+        "3": {
+          "title": "可重新发起",
+          "desc": "发起人可以基于反馈修改后再次提交。"
+        }
+      }
+    },
     "votingResult": "投票结果",
     "castVote": "投出你的一票",
     "changeVote": "你已投票，可以更改",
-    "votedMessage": "你投了「{{choice}}」"
+    "votedMessage": "你投了「{{choice}}」",
+    "viewRecord": "查看决策记录",
+    "commentPlaceholder": "补充你的意见、问题或执行反馈..."
+  },
+  "discussion": {
+    "me": "我",
+    "justNow": "刚刚",
+    "send": "发送"
   },
   "chat": {
     "channel": {
@@ -1081,10 +1693,12 @@
     "modules": {
       "presetTitle": "选择一个预设",
       "presetDesc": "从 6 种典型 DAO 形态中挑一个起点，后续可继续微调。",
-      "tuneTitle": "微调模块",
-      "tuneDesc": "按需勾选治理模块，部分模块之间存在依赖（会自动补齐）。",
-      "previewTitle": "最终 Tab 预览",
-      "previewDesc": "这是你的 DAO 主页将呈现的 Tab 顺序。",
+      "tuneTitle": "高级模块设置",
+      "tuneDesc": "不确定时保留模板默认设置即可；熟悉治理结构后再按需开启、关闭或配置模块。",
+      "showAdvanced": "展开高级设置",
+      "hideAdvanced": "收起高级设置",
+      "previewTitle": "发布后页面结构预览",
+      "previewDesc": "这是你的 DAO 主页将呈现的内容结构。",
       "previewEmpty": "未选择任何模块。",
       "locked": "必选",
       "requires": "依赖",
@@ -1146,6 +1760,47 @@
     "requiredSkills": "所需技能",
     "apply": "申请承接",
     "submitWork": "提交成果",
+    "recordContribution": "记录相关贡献",
+    "goWorkspace": "去工作台查看",
+    "viewWorkQueue": "查看我的行动队列",
+    "defaultContributionSummary": "赏金任务相关贡献",
+    "packageHint": "交付内容会作为贡献包的基础信息，后续可同步到工作台和个人贡献档案。",
+    "commentPlaceholder": "补充问题、进展或交付说明...",
+    "fallback": {
+      "objective": "{{dao}} 发布的协作任务：{{title}}。请围绕目标、交付边界和验收方式完成一次可追溯的贡献。",
+      "activity": "发布了赏金任务「{{title}}」",
+      "deliverables": {
+        "confirm": "确认任务目标、范围和验收标准",
+        "package": "提交可复核的成果包或过程记录",
+        "sync": "在工作台同步进展，必要时补充说明"
+      }
+    },
+    "side": {
+      "status": "状态",
+      "postedAt": "发布时间",
+      "reward": "奖励",
+      "rewardOpen": "待协商",
+      "applicants": "申请情况",
+      "applicantsUnknown": "开放申请中"
+    },
+    "nextAction": {
+      "title": "下一步行动",
+      "desc": "把任务状态和工作台贡献记录串起来",
+      "hint": {
+        "open": "如果你准备承接，可以先申请。申请后任务会进入待确认阶段，后续行动会回到工作台继续跟进。",
+        "applied": "你已经发起申请，接下来等待发布者确认。可以回到工作台查看待跟进事项。",
+        "in_progress": "任务已经进入执行阶段。完成交付物后提交成果，系统会进入审核流程。",
+        "submitted": "成果已提交。建议同步记录这次贡献，方便后续在个人档案和 DAO 贡献中沉淀。",
+        "reviewing": "发布者正在审核成果。你可以补充贡献记录，减少事后整理成本。",
+        "completed": "任务已完成。把关键贡献补充到档案里，便于后续声誉、结算和复盘。",
+        "rejected": "本次申请未通过，可以返回赏金列表继续寻找更合适的任务。"
+      }
+    },
+    "feedback": {
+      "applied": "已提交申请，下一步可以在工作台跟进确认结果。",
+      "submitted": "成果已提交，建议继续记录本次贡献。",
+      "logged": "贡献已记录，工作台会作为后续跟进入口。"
+    },
     "status": {
       "open": "开放",
       "applied": "已申请",

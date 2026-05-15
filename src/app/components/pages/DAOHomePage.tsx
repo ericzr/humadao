@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Settings2 } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "../ui/tabs";
@@ -16,15 +16,16 @@ import { DAOProfileTab } from "./dao-home/DAOProfileTab";
 import { DAOLineage } from "./dao-home/DAOLineage";
 import { DAOForkWizard } from "./dao-home/DAOForkWizard";
 import { DAOBudget } from "./dao-home/DAOBudget";
-import { MinimumProtocolCard } from "./dao-home/MinimumProtocolCard";
 import { ModulePlaceholder } from "./dao-home/ModulePlaceholder";
 import { DAOModuleSettings } from "./dao-home/DAOModuleSettings";
+import { DAOOverview } from "./dao-home/DAOOverview";
+import { DAOProductTabPanel } from "./dao-home/DAOProductTabPanel";
 import { findDAOById } from "@/data/dao";
-import { MODULE_META } from "@/data";
 import { useDAOModules } from "@/app/hooks/useDAOModules";
 import type { DAOModule } from "@/types";
 
 type TabModule = Exclude<DAOModule, "protocolCard">;
+type ProductTab = "overview" | "tasks" | "governance" | "knowledge" | "organization";
 
 /**
  * Registry of modules that render as their own Tab. `protocolCard` is
@@ -42,12 +43,27 @@ const TAB_COMPONENTS: Partial<Record<TabModule, React.ComponentType>> = {
   budget: DAOBudget,
 };
 
+const PRODUCT_TAB_MODULES: Record<ProductTab, TabModule[]> = {
+  overview: ["profile"],
+  tasks: ["bounties", "kanban", "contributions", "events"],
+  governance: ["proposals", "budget", "constitution", "paramGov", "tokenGov", "arbitration", "metrics", "snapshot", "safe"],
+  knowledge: ["discussion", "docs", "notionEmbed", "discordEmbed"],
+  organization: ["lineage", "subOrgs"],
+};
+
 export function DAOHomePage() {
   const { t } = useTranslation();
   const { id } = useParams();
   const dao = id ? findDAOById(id) : undefined;
   const [showFork, setShowFork] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
+  const [activeProductTab, setActiveProductTab] = useState<ProductTab>("overview");
+
+  useEffect(() => {
+    setShowFork(false);
+    setShowSettings(false);
+    setActiveProductTab("overview");
+  }, [id]);
 
   // Reactive: override > dao.modules > LEGACY_MODULES, always canonically ordered.
   const enabledModules = useDAOModules(dao);
@@ -59,14 +75,43 @@ export function DAOHomePage() {
       ((dao as unknown as { children: unknown[] }).children.length > 0),
   );
   const showProtocolCard = enabledModules.includes("protocolCard");
-  const tabModules = enabledModules.filter((m): m is TabModule => {
+  const availableModules = enabledModules.filter((m): m is TabModule => {
     if (m === "protocolCard") return false;
     if (m === "subOrgs" && !hasChildren) return false;
     return true;
   });
 
-  // Pick a default tab — first available module, preferring profile if enabled.
-  const defaultTab = tabModules.includes("profile") ? "profile" : tabModules[0];
+  const visibleProductTabs = (Object.keys(PRODUCT_TAB_MODULES) as ProductTab[]).filter((tab) => {
+    if (tab === "overview") return true;
+    return PRODUCT_TAB_MODULES[tab].some((m) => availableModules.includes(m));
+  });
+
+  const selectProductTab = (tab: ProductTab) => {
+    if (visibleProductTabs.includes(tab)) {
+      setActiveProductTab(tab);
+    }
+  };
+
+  const renderModule = (m: TabModule) => {
+    const Component = TAB_COMPONENTS[m];
+    if (m === "lineage") return <DAOLineage onFork={() => setShowFork(true)} />;
+    if (Component) return <Component />;
+    return <ModulePlaceholder module={m} />;
+  };
+
+  const renderProductTab = (tab: ProductTab) => {
+    if (tab === "overview") {
+      return (
+        <DAOOverview
+          dao={dao}
+          showProtocolCard={showProtocolCard}
+          onSelectTab={selectProductTab}
+        />
+      );
+    }
+    const modules = PRODUCT_TAB_MODULES[tab].filter((m) => availableModules.includes(m));
+    return <DAOProductTabPanel dao={dao} tab={tab} modules={modules} renderModule={renderModule} />;
+  };
 
   return (
     <div className="flex flex-col xl:flex-row min-h-0">
@@ -80,21 +125,18 @@ export function DAOHomePage() {
           <DAOModuleSettings dao={dao} onClose={() => setShowSettings(false)} />
         ) : (
           <>
-            {showProtocolCard && (
-              <div className="mb-6">
-                <MinimumProtocolCard dao={dao} />
-              </div>
-            )}
-
-            {tabModules.length > 0 && defaultTab && (
-              <Tabs defaultValue={defaultTab}>
+            {visibleProductTabs.length > 0 && (
+              <Tabs
+                value={activeProductTab}
+                onValueChange={(value) => selectProductTab(value as ProductTab)}
+              >
                 {/* Tab list with horizontal scroll on narrow screens */}
                 <div className="flex items-center gap-2 mb-6">
                   <div className="overflow-x-auto scrollbar-none flex-1 min-w-0">
                     <TabsList className="bg-secondary inline-flex whitespace-nowrap min-w-full sm:min-w-0">
-                      {tabModules.map((m) => (
-                        <TabsTrigger key={m} value={m}>
-                          {t(MODULE_META[m].labelKey)}
+                      {visibleProductTabs.map((tab) => (
+                        <TabsTrigger key={tab} value={tab}>
+                          {t(`dao.productTab.${tab}` as never)}
                         </TabsTrigger>
                       ))}
                     </TabsList>
@@ -110,17 +152,10 @@ export function DAOHomePage() {
                   </Button>
                 </div>
 
-                {tabModules.map((m) => {
-                  const Component = TAB_COMPONENTS[m];
+                {visibleProductTabs.map((tab) => {
                   return (
-                    <TabsContent key={m} value={m}>
-                      {m === "lineage" ? (
-                        <DAOLineage onFork={() => setShowFork(true)} />
-                      ) : Component ? (
-                        <Component />
-                      ) : (
-                        <ModulePlaceholder module={m} />
-                      )}
+                    <TabsContent key={tab} value={tab}>
+                      {renderProductTab(tab)}
                     </TabsContent>
                   );
                 })}
@@ -131,7 +166,7 @@ export function DAOHomePage() {
       </div>
 
       {/* Right about panel */}
-      <DAOAboutPanel />
+      <DAOAboutPanel dao={dao} />
     </div>
   );
 }

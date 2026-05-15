@@ -7,9 +7,10 @@ interface Props {
   /** only show dimensions above this threshold (0-100) */
   threshold?: number;
   max?: number;
+  className?: string;
 }
 
-export function ValuesTags({ values, threshold = 65, max = 4 }: Props) {
+export function ValuesTags({ values, threshold = 65, max = 4, className }: Props) {
   const { t } = useTranslation();
 
   const top = VALUE_DIMENSIONS
@@ -22,7 +23,7 @@ export function ValuesTags({ values, threshold = 65, max = 4 }: Props) {
   return (
     <div className="flex flex-wrap gap-1">
       {top.map((d) => (
-        <Badge key={d} variant="outline" className="text-muted-foreground text-[0.65rem]">
+        <Badge key={d} variant="outline" className={className ?? "text-muted-foreground text-[0.65rem]"}>
           {t(`daoProfile.value.${d}` as never)}
         </Badge>
       ))}

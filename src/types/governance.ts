@@ -1,5 +1,6 @@
 export interface Proposal {
   id: number;
+  daoId: string;
   titleKey: string;
   author: string;
   dao: string;

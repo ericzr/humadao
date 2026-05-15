@@ -40,5 +40,5 @@ export {
   getSkillLayer,
   sortSkillsByLayer,
 } from "./contributor";
-export { myTasks, notifications } from "./workspace";
+export { myTasks, notifications, workspaceContributions, workspaceDAORecords, workspaceTaskDetails } from "./workspace";
 export { locationTree, isLocationMatch, searchLocations, getLocationPath } from "./location";

@@ -2,6 +2,7 @@ import { MessageCircle, ThumbsUp, ThumbsDown } from "lucide-react";
 import { Card } from "../../ui/card";
 import { Badge } from "../../ui/badge";
 import { Button } from "../../ui/button";
+import { StatusBadge } from "../../shared/StatusBadge";
 import { useTranslation } from "react-i18next";
 import type { Proposal } from "@/types";
 import { governanceComments } from "@/data";
@@ -17,7 +18,7 @@ export function ProposalDetail({ proposal }: ProposalDetailProps) {
 
   return (
     <Card className="bg-card border-border p-4 sm:p-5 sticky top-8">
-      <Badge className="bg-secondary text-muted-foreground border-0 mb-3">{t(proposal.statusKey)}</Badge>
+      <StatusBadge status={proposal.statusKey} labelKey={proposal.statusKey} className="mb-3" />
       <h2 className="mb-2">{t(proposal.titleKey)}</h2>
       <p className="text-muted-foreground mb-4 text-sm">{t(proposal.descKey)}</p>
 

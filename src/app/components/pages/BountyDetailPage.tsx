@@ -1,92 +1,54 @@
-import { useParams, Link } from "react-router";
+import { useEffect, useMemo, useState } from "react";
+import { Link, useParams } from "react-router";
 import { useTranslation } from "react-i18next";
-import {
-  ArrowLeft,
-  Clock,
-  Users,
-  Coins,
-  CheckCircle2,
-  Circle,
-  Play,
-  FileCheck,
-  Eye,
-  MessageSquare,
-  User,
-} from "lucide-react";
-import { Card } from "../ui/card";
+import { ArrowLeft, ArrowRight, ClipboardCheck, Send } from "lucide-react";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
-import { Separator } from "../ui/separator";
+import { Card } from "../ui/card";
+import { DiscussionThread } from "../shared/DiscussionThread";
+import { StatusBadge } from "../shared/StatusBadge";
+import { LogContributionSheet } from "./workspace/LogContributionSheet";
 import { bountyDetails, bounties } from "@/data";
 import type { BountyStatus } from "@/types";
 
-const STATUS_STEPS: { key: BountyStatus; icon: typeof Circle }[] = [
-  { key: "open", icon: Circle },
-  { key: "applied", icon: Users },
-  { key: "in_progress", icon: Play },
-  { key: "submitted", icon: FileCheck },
-  { key: "reviewing", icon: Eye },
-  { key: "completed", icon: CheckCircle2 },
-];
-
-function getStepIndex(status: BountyStatus): number {
-  return STATUS_STEPS.findIndex((s) => s.key === status);
+function getStatusTone(status: BountyStatus) {
+  if (status === "open" || status === "in_progress") return "active";
+  if (status === "applied" || status === "submitted" || status === "reviewing") return "pending";
+  return status;
 }
 
-function StatusStepper({ status }: { status: BountyStatus }) {
-  const { t } = useTranslation();
-  const current = getStepIndex(status);
-
-  return (
-    <div className="flex items-center gap-1 overflow-x-auto pb-2">
-      {STATUS_STEPS.map((step, i) => {
-        const Icon = step.icon;
-        const done = i <= current;
-        const active = i === current;
-        return (
-          <div key={step.key} className="flex items-center gap-1">
-            {i > 0 && (
-              <div className={`h-0.5 w-4 sm:w-8 ${done ? "bg-primary" : "bg-muted"}`} />
-            )}
-            <div className="flex flex-col items-center gap-1">
-              <div
-                className={`w-8 h-8 rounded-full flex items-center justify-center text-xs
-                  ${active ? "bg-primary text-primary-foreground ring-2 ring-primary/30" : done ? "bg-primary/80 text-primary-foreground" : "bg-muted text-muted-foreground"}`}
-              >
-                <Icon className="w-4 h-4" />
-              </div>
-              <span className={`text-xs whitespace-nowrap ${active ? "text-foreground font-medium" : "text-muted-foreground"}`}>
-                {t(`bountyDetail.status.${step.key}`)}
-              </span>
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  );
+function getPrimaryActionKey(status: BountyStatus) {
+  if (status === "open") return "bountyDetail.apply";
+  if (status === "in_progress") return "bountyDetail.submitWork";
+  if (["submitted", "reviewing", "completed"].includes(status)) return "bountyDetail.recordContribution";
+  return "bountyDetail.goWorkspace";
 }
 
-const TIMELINE_ICON: Record<string, typeof Circle> = {
-  created: Circle,
-  applied: Users,
-  accepted: CheckCircle2,
-  submitted: FileCheck,
-  comment: MessageSquare,
-  completed: CheckCircle2,
-};
+function shouldOpenContributionPackage(status: BountyStatus) {
+  return ["submitted", "reviewing", "completed"].includes(status);
+}
 
 export function BountyDetailPage() {
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation();
+  const [currentStatus, setCurrentStatus] = useState<BountyStatus>("open");
+  const [logOpen, setLogOpen] = useState(false);
+  const [feedbackKey, setFeedbackKey] = useState<string | null>(null);
 
   const detail = id ? bountyDetails[id] : undefined;
-  const brief = id ? bounties.find((b) => b.id === id) : undefined;
+  const brief = useMemo(() => (id ? bounties.find((b) => b.id === id) : undefined), [id]);
+
+  useEffect(() => {
+    setCurrentStatus(detail?.status ?? "open");
+    setFeedbackKey(null);
+    setLogOpen(false);
+  }, [id, detail?.status]);
 
   if (!detail && !brief) {
     return (
       <div className="p-8 text-center text-muted-foreground">
         <p>{t("bountyDetail.notFound")}</p>
-        <Link to="/bounties" className="text-primary underline mt-2 inline-block">
+        <Link to="/bounties" className="mt-2 inline-block text-primary hover:underline">
           {t("bountyDetail.backToList")}
         </Link>
       </div>
@@ -94,124 +56,205 @@ export function BountyDetailPage() {
   }
 
   const bounty = detail ?? brief!;
+  const title = t(bounty.titleKey);
   const daoLabel = bounty.daoKey.startsWith("bounty.") ? t(bounty.daoKey) : bounty.daoKey;
+  const creator = detail?.creatorName ?? daoLabel;
+  const objective = detail?.descKey
+    ? t(detail.descKey)
+    : t("bountyDetail.fallback.objective", { title, dao: daoLabel });
+  const deliverables = detail?.deliverables.length
+    ? detail.deliverables.map((key) => t(key))
+    : [
+        t("bountyDetail.fallback.deliverables.confirm"),
+        t("bountyDetail.fallback.deliverables.package"),
+        t("bountyDetail.fallback.deliverables.sync"),
+      ];
+  const messages = detail?.timeline.length
+    ? detail.timeline.map((event) => ({
+        user: event.user,
+        time: t(event.timeKey),
+        text: t(event.textKey),
+      }))
+    : [
+        {
+          user: creator,
+          time: t(bounty.timeKey),
+          text: t("bountyDetail.fallback.activity", { title }),
+        },
+      ];
+  const contributionSummary = `${title} - ${t("bountyDetail.defaultContributionSummary")}`;
+  const primaryActionKey = getPrimaryActionKey(currentStatus);
+
+  const handlePrimaryAction = () => {
+    if (currentStatus === "open") {
+      setCurrentStatus("applied");
+      setFeedbackKey("bountyDetail.feedback.applied");
+      return;
+    }
+    if (currentStatus === "in_progress") {
+      setCurrentStatus("submitted");
+      setFeedbackKey("bountyDetail.feedback.submitted");
+      return;
+    }
+    if (shouldOpenContributionPackage(currentStatus)) {
+      setLogOpen(true);
+    }
+  };
+
+  const handleLogged = () => {
+    setFeedbackKey("bountyDetail.feedback.logged");
+  };
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8 max-w-4xl mx-auto">
-      <Link to="/bounties" className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground text-sm mb-4 transition">
-        <ArrowLeft className="w-4 h-4" />
+    <div className="mx-auto max-w-6xl p-4 sm:p-6 lg:p-8">
+      <Link to="/bounties" className="mb-5 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition hover:text-foreground">
+        <ArrowLeft className="h-4 w-4" />
         {t("bountyDetail.backToList")}
       </Link>
 
-      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
-        <div>
-          <h1 className="text-xl sm:text-2xl font-bold">{t(bounty.titleKey)}</h1>
-          <p className="text-muted-foreground text-sm mt-1">{daoLabel} · {t(bounty.timeKey)}</p>
-        </div>
-        {bounty.amount && (
-          <div className="flex items-center gap-1.5 text-lg font-semibold shrink-0">
-            <Coins className="w-5 h-5 text-primary" />
-            {bounty.amount}
-          </div>
-        )}
-      </div>
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_300px]">
+        <main className="min-w-0 space-y-5">
+          <section className="space-y-4 border-b border-border pb-5">
+            <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+              <span>{daoLabel}</span>
+              <StatusBadge
+                status={getStatusTone(currentStatus)}
+                labelKey={`bountyDetail.status.${currentStatus}`}
+              />
+            </div>
 
-      {detail && (
-        <Card className="p-4 sm:p-6 mb-6">
-          <h2 className="text-sm font-semibold text-muted-foreground mb-4">{t("bountyDetail.lifecycle")}</h2>
-          <StatusStepper status={detail.status} />
-        </Card>
-      )}
+            <div className="min-w-0">
+              <h1 className="text-2xl font-semibold leading-tight sm:text-3xl">{title}</h1>
+              <p className="mt-3 max-w-3xl text-sm leading-6 text-muted-foreground">
+                {objective}
+              </p>
+            </div>
+          </section>
 
-      <div className="grid lg:grid-cols-[1fr_280px] gap-6">
-        <div className="space-y-6">
-          {detail && (
-            <Card className="p-4 sm:p-6">
-              <h2 className="font-semibold mb-3">{t("bountyDetail.description")}</h2>
-              <p className="text-muted-foreground text-sm leading-relaxed">{t(detail.descKey)}</p>
-
-              {detail.deliverables.length > 0 && (
-                <>
-                  <h3 className="font-semibold mt-5 mb-2">{t("bountyDetail.deliverables")}</h3>
-                  <ul className="space-y-1.5">
-                    {detail.deliverables.map((d, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                        {t(d)}
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              )}
-            </Card>
-          )}
-
-          {detail && detail.timeline.length > 0 && (
-            <Card className="p-4 sm:p-6">
-              <h2 className="font-semibold mb-4">{t("bountyDetail.timeline")}</h2>
-              <div className="relative pl-6 border-l border-border space-y-6">
-                {detail.timeline.map((evt, i) => {
-                  const Icon = TIMELINE_ICON[evt.type] ?? Circle;
-                  return (
-                    <div key={i} className="relative">
-                      <div className="absolute -left-[25px] w-4 h-4 rounded-full bg-background border-2 border-primary flex items-center justify-center">
-                        <Icon className="w-2.5 h-2.5 text-primary" />
-                      </div>
-                      <div>
-                        <div className="flex items-center gap-2 mb-0.5">
-                          <span className="font-medium text-sm">{evt.user}</span>
-                          <span className="text-xs text-muted-foreground">{t(evt.timeKey)}</span>
-                        </div>
-                        <p className="text-sm text-muted-foreground">{t(evt.textKey)}</p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </Card>
-          )}
-        </div>
-
-        <div className="space-y-4">
-          <Card className="p-4">
-            <h3 className="font-semibold text-sm mb-3">{t("bountyDetail.info")}</h3>
-            <div className="space-y-3 text-sm">
-              {detail && (
-                <>
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <Clock className="w-4 h-4 shrink-0" />
-                    <span>{t("bountyDetail.deadline")}: {t(detail.deadlineKey)}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <Users className="w-4 h-4 shrink-0" />
-                    <span>{t("bountyDetail.applicantsCount", { count: detail.applicants })}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <User className="w-4 h-4 shrink-0" />
-                    <span>{t("bountyDetail.creator")}: {detail.creatorName}</span>
-                  </div>
-                </>
-              )}
-              <Separator />
-              <div>
-                <p className="text-muted-foreground mb-2">{t("bountyDetail.requiredSkills")}</p>
-                <div className="flex flex-wrap gap-1.5">
-                  {bounty.skills.map((s) => (
-                    <Badge key={s} variant="secondary">{t(s)}</Badge>
-                  ))}
+          <Card className="p-4 sm:p-5">
+            <div className="mb-4 flex items-center justify-between gap-3">
+              <h2 className="text-sm font-semibold">{t("bountyDetail.deliverables")}</h2>
+              <Badge variant="secondary" className="border-0 text-xs text-muted-foreground">
+                {deliverables.length}
+              </Badge>
+            </div>
+            <div className="space-y-3">
+              {deliverables.map((item, index) => (
+                <div key={`${item}-${index}`} className="flex items-start gap-3 rounded-md border border-border px-3 py-3">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-border text-[0.65rem] text-muted-foreground">
+                    {index + 1}
+                  </span>
+                  <p className="text-sm leading-6">{item}</p>
                 </div>
-              </div>
+              ))}
+            </div>
+            <div className="mt-5 rounded-md bg-secondary/40 p-3">
+              <p className="text-xs leading-5 text-muted-foreground">
+                {t("bountyDetail.packageHint")}
+              </p>
             </div>
           </Card>
 
-          {detail?.status === "open" && (
-            <Button className="w-full">{t("bountyDetail.apply")}</Button>
-          )}
-          {detail?.status === "in_progress" && (
-            <Button className="w-full">{t("bountyDetail.submitWork")}</Button>
-          )}
-        </div>
+          <DiscussionThread
+            title={t("bountyDetail.timeline")}
+            placeholder={t("bountyDetail.commentPlaceholder")}
+            messages={messages}
+          />
+        </main>
+
+        <aside>
+          <Card className="p-4">
+            <h2 className="mb-4 text-sm font-semibold">{t("bountyDetail.info")}</h2>
+            <div className="space-y-3 text-sm">
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-muted-foreground">{t("bountyDetail.side.status")}</span>
+                <StatusBadge
+                  status={getStatusTone(currentStatus)}
+                  labelKey={`bountyDetail.status.${currentStatus}`}
+                />
+              </div>
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-muted-foreground">
+                  {detail ? t("bountyDetail.deadline") : t("bountyDetail.side.postedAt")}
+                </span>
+                <span className="text-right">{detail ? t(detail.deadlineKey) : t(bounty.timeKey)}</span>
+              </div>
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-muted-foreground">{t("bountyDetail.side.reward")}</span>
+                <span className="text-right">{bounty.amount ?? t("bountyDetail.side.rewardOpen")}</span>
+              </div>
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-muted-foreground">{t("bountyDetail.side.applicants")}</span>
+                <span className="text-right">
+                  {detail ? t("bountyDetail.applicantsCount", { count: detail.applicants }) : t("bountyDetail.side.applicantsUnknown")}
+                </span>
+              </div>
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-muted-foreground">{t("bountyDetail.creator")}</span>
+                <span className="text-right">{creator}</span>
+              </div>
+            </div>
+
+            <div className="my-4 h-px bg-border" />
+
+            <div>
+              <p className="mb-2 text-xs text-muted-foreground">{t("bountyDetail.requiredSkills")}</p>
+              <div className="flex flex-wrap gap-1.5">
+                {bounty.skills.map((skill) => (
+                  <Badge key={skill} variant="secondary" className="h-6 rounded-md border-0 text-[0.7rem] font-medium">
+                    {t(skill)}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+
+            {feedbackKey && (
+              <div className="mt-4 rounded-md border border-primary/20 bg-primary/5 px-3 py-2 text-xs text-primary">
+                {t(feedbackKey)}
+              </div>
+            )}
+
+            <div className="my-4 h-px bg-border" />
+
+            <div className="space-y-2">
+              {["applied", "rejected"].includes(currentStatus) ? (
+                <Button asChild className="w-full">
+                  <Link to="/workspace">
+                    {t(primaryActionKey)}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+              ) : (
+                <Button className="w-full" onClick={handlePrimaryAction}>
+                  {shouldOpenContributionPackage(currentStatus) ? (
+                    <ClipboardCheck className="h-4 w-4" />
+                  ) : (
+                    <Send className="h-4 w-4" />
+                  )}
+                  {t(primaryActionKey)}
+                </Button>
+              )}
+
+              {currentStatus === "open" && (
+                <Button asChild variant="outline" className="w-full">
+                  <Link to="/workspace">
+                    {t("bountyDetail.viewWorkQueue")}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+              )}
+            </div>
+          </Card>
+        </aside>
       </div>
+
+      <LogContributionSheet
+        open={logOpen}
+        onClose={() => setLogOpen(false)}
+        initialType="documentation"
+        initialSummary={contributionSummary}
+        onLogged={handleLogged}
+      />
     </div>
   );
 }

@@ -72,9 +72,10 @@ const cells: Array<{
 
 interface MinimumProtocolCardProps {
   dao: DAO;
+  compact?: boolean;
 }
 
-export function MinimumProtocolCard({ dao }: MinimumProtocolCardProps) {
+export function MinimumProtocolCard({ dao, compact = false }: MinimumProtocolCardProps) {
   const { t, i18n } = useTranslation();
   const protocol = resolveProtocol(dao);
   if (!protocol) return null;
@@ -82,16 +83,18 @@ export function MinimumProtocolCard({ dao }: MinimumProtocolCardProps) {
   const isSynthesised = !dao.protocol;
 
   return (
-    <Card className="bg-card border-border p-5 sm:p-6">
-      <div className="flex items-start gap-3 mb-4">
-        <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-          <Handshake className="w-5 h-5 text-primary" />
+    <Card className={`bg-card border-border ${compact ? "p-4 sm:p-5" : "p-5 sm:p-6"}`}>
+      <div className={`flex items-start gap-3 ${compact ? "mb-3" : "mb-4"}`}>
+        <div className={`${compact ? "w-9 h-9 rounded-lg" : "w-10 h-10 rounded-xl"} bg-primary/10 flex items-center justify-center shrink-0`}>
+          <Handshake className={`${compact ? "w-4 h-4" : "w-5 h-5"} text-primary`} />
         </div>
         <div className="min-w-0">
           <h3 className="text-base">{t("dao.protocol.title")}</h3>
-          <p className="text-muted-foreground text-xs mt-0.5 leading-5">
-            {t("dao.protocol.subtitle")}
-          </p>
+          {!compact && (
+            <p className="text-muted-foreground text-xs mt-0.5 leading-5">
+              {t("dao.protocol.subtitle")}
+            </p>
+          )}
         </div>
       </div>
 
@@ -112,12 +115,14 @@ export function MinimumProtocolCard({ dao }: MinimumProtocolCardProps) {
                 </span>
                 <div className="min-w-0">
                   <p className="text-sm font-medium">{t(cell.labelKey)}</p>
-                  <p className="text-[11px] text-muted-foreground leading-4">
-                    {t(cell.descKey)}
-                  </p>
+                  {!compact && (
+                    <p className="text-[11px] text-muted-foreground leading-4">
+                      {t(cell.descKey)}
+                    </p>
+                  )}
                 </div>
               </div>
-              <p className="text-xs text-muted-foreground leading-5">
+              <p className={`${compact ? "line-clamp-2" : ""} text-xs text-muted-foreground leading-5`}>
                 {localizeText(copy, i18n.language)}
               </p>
             </div>

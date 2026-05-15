@@ -161,6 +161,7 @@ export interface ContributionRecord {
   type: ContributionType;
   title: string;
   daoId: string;
+  proposalId?: number;
   date: string;
   desc?: string;
   status?: string;

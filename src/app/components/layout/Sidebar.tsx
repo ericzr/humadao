@@ -178,7 +178,7 @@ export function AppSidebar() {
                 {personalNav.map((item) => (
                   <SidebarMenuItem key={item.to}>
                     <SidebarMenuButton asChild tooltip={t(item.labelKey)}>
-                      <NavLink to={item.to} onClick={closeMobile}>
+                      <NavLink to={item.to} end={item.to === "/profile"} onClick={closeMobile}>
                         <item.icon className="w-4 h-4" />
                         <span>{t(item.labelKey)}</span>
                       </NavLink>

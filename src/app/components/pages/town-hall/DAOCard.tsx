@@ -14,6 +14,7 @@ interface Props {
 export function DAOCard({ dao }: Props) {
   const { t } = useTranslation();
   const { id, nameKey, descKey, members, featured, profile, projectType, avatar } = dao;
+  const tagClassName = "h-5 px-2 py-0 text-[0.65rem] leading-none text-muted-foreground";
 
   return (
     <Link to={`/dao/${id}`}>
@@ -41,12 +42,12 @@ export function DAOCard({ dao }: Props) {
         {/* Tags: project type + values + spectrum in one flow */}
         <div className="flex flex-wrap items-center gap-1 mt-auto">
           {projectType && (
-            <Badge variant="outline" className="text-muted-foreground text-[0.6rem] px-1.5 py-0">
+            <Badge variant="outline" className={tagClassName}>
               {t(`townHall.filter.projectTypes.${projectType}` as never)}
             </Badge>
           )}
-          {profile && <ValuesTags values={profile.values} threshold={70} max={1} />}
-          {profile && <SpectrumTags spectrum={profile.spectrum} max={1} />}
+          {profile && <ValuesTags values={profile.values} threshold={70} max={1} className={tagClassName} />}
+          {profile && <SpectrumTags spectrum={profile.spectrum} max={1} className={tagClassName} />}
         </div>
       </Card>
     </Link>

@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Card } from "../../ui/card";
 import { Badge } from "../../ui/badge";
+import { StatusBadge } from "../../shared/StatusBadge";
 import { townHallDAOs } from "@/data";
 import type { ContributionRecord, ContributionType, Contributor } from "@/types";
 
@@ -74,9 +75,7 @@ export function ContributionTimeline({ contributor, timeline }: ContributionTime
                 {record.desc && <p className="text-xs text-muted-foreground mt-1 leading-5">{record.desc}</p>}
 
                 {record.status && (
-                  <Badge variant="outline" className="mt-2 text-xs">
-                    {record.status}
-                  </Badge>
+                  <StatusBadge label={record.status} status={record.status} className="mt-2 text-xs" showIcon={false} />
                 )}
               </div>
             </div>

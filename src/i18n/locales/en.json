@@ -49,7 +49,7 @@
     "townHall": "Town Hall",
     "bounties": "Bounties",
     "contributors": "Contributors",
-    "workspace": "My Workspace",
+    "workspace": "Workspace",
     "governance": "Governance",
     "chat": "Collaboration",
     "bookmarks": "Bookmarks",
@@ -143,6 +143,11 @@
     "subtitle": "Explore DAO ecosystems, bounty opportunities, and top contributors",
     "clusterTitle": "Real-world Mission Tracks",
     "searchPlaceholder": "Search DAOs, bounties, contributors...",
+    "position": {
+      "eyebrow": "Discover page role",
+      "desc": "This page surfaces featured mission tracks, hot DAOs, bounty opportunities, and contributor signals. Use Town Hall for the full directory, advanced filters, and location-based browsing.",
+      "townHall": "Open Town Hall"
+    },
     "trendingDAO": "Hot DAOs",
     "hotBounties": "Hot Bounties",
     "topContributors": "Top Contributors",
@@ -224,11 +229,6 @@
         "africa": "Africa",
         "oceania": "Oceania"
       }
-    },
-    "quick": {
-      "active": "Projects already running",
-      "incubating": "Projects in incubation",
-      "offline": "Offline or hybrid collaboration"
     },
     "dao": {
       "luboomReactor": "Truth Distillation - Luboom Reactor",
@@ -471,6 +471,55 @@
     "totalPaid": "Total Paid: $4,036.88",
     "follow": "Follow",
     "roleInfo": "The following roles grant you access to specific permissions and private spaces within this organization.",
+    "productTab": {
+      "overview": "Overview",
+      "tasks": "Tasks",
+      "governance": "Governance",
+      "knowledge": "Knowledge",
+      "organization": "Organization"
+    },
+    "overview": {
+      "title": "Start with one action people can join",
+      "nextStep": "Next step",
+      "fit": "Who should join",
+      "findTask": "View tasks",
+      "vote": "Vote",
+      "discuss": "Discuss"
+    },
+    "productPage": {
+      "empty": "No display modules are enabled for this view yet.",
+      "tasks": {
+        "title": "Tasks and contribution entry",
+        "desc": "Review this DAO's bounties, board, events, and contribution modules so members can quickly find an action to join.",
+        "primary": "View this DAO's bounties"
+      },
+      "governance": {
+        "title": "Governance and decisions",
+        "desc": "Keep proposals, budget, constitution, and advanced governance modules together so members understand what needs attention.",
+        "primary": "View this DAO's governance"
+      },
+      "knowledge": {
+        "title": "Knowledge and progress",
+        "desc": "Capture discussions, progress updates, documents, and external collaboration spaces so knowledge does not disappear into chat.",
+        "primary": "View knowledge module"
+      },
+      "organization": {
+        "title": "Organization structure",
+        "desc": "View this DAO's lineage, sub-organizations, and fork relationships to understand inheritance, differentiation, and collaboration.",
+        "primary": "View organization lineage"
+      },
+      "metric": {
+        "openTasks": "Open tasks",
+        "activeContributors": "Active contributors",
+        "enabledModules": "Enabled modules",
+        "activeProposals": "Active proposals",
+        "voterTurnout": "Turnout",
+        "documents": "Documents",
+        "updates": "Updates",
+        "members": "Members",
+        "subOrgs": "Sub-orgs"
+      }
+    },
     "showcase": {
       "vision": "Vision",
       "consensus": "Consensus",
@@ -579,6 +628,7 @@
     },
     "tasks": "tasks",
     "proposals": "Proposals",
+    "proposalsEmpty": "This organization has no public proposals yet.",
     "proposal": {
       "treasury": "Increase Community Treasury Allocation to ¥50,000",
       "treasuryStatus": "Voting",
@@ -663,6 +713,13 @@
     "joinPending": "Pending...",
     "joined": "Joined",
     "memberBadge": "Member",
+    "sidePanel": {
+      "profile": "Collaboration profile",
+      "structure": "Organization status",
+      "stage": "Stage",
+      "relation": "Relation",
+      "lineageHint": "View full lineage, forks, and inheritance in the Organization tab."
+    },
     "moduleSettings": {
       "entry": "Modules",
       "back": "Back",
@@ -744,6 +801,51 @@
   },
   "profile": {
     "bio": "Software Engineer | Web3 | Podcast Host - Fluent in English, Arabic & French",
+    "about": "About",
+    "editBio": "Edit bio",
+    "saveBio": "Save bio",
+    "editProfile": "Edit profile",
+    "saveProfile": "Save profile",
+    "bioEditHint": "Use a short paragraph to describe your collaboration scope, strongest roles, and how others should reach you.",
+    "profileEditHint": "Maintain your public collaboration profile. Changes preview locally first and can later connect to identity or profile storage.",
+    "bioPlaceholder": "Describe your current collaboration focus, strongest roles, and how you want to be invited.",
+    "editSection": {
+      "basic": "Basic info",
+      "about": "Collaboration intro",
+      "capability": "Capabilities and languages",
+      "media": "Media links"
+    },
+    "displayName": "Display name",
+    "availabilityStatus": "Collaboration status",
+    "availability": {
+      "open": "Open to Collaborate",
+      "selective": "Selective",
+      "focused": "Focused",
+      "unavailable": "Not Collaborating"
+    },
+    "availabilityDesc": {
+      "open": "Open to new DAO, project, task, or co-creation invitations.",
+      "selective": "Only accepts highly relevant invitations, such as specific domains, short projects, or trusted referrals.",
+      "focused": "Mainly focused on current collaborations, while still reviewing important invitations.",
+      "unavailable": "Not accepting new collaboration invitations right now."
+    },
+    "languagePlaceholder": "Add language",
+    "addLanguage": "Add",
+    "removeLanguage": "Remove {{language}}",
+    "customSkillPlaceholder": "Add a custom skill tag",
+    "addCustomSkill": "Add",
+    "removeCustomSkill": "Remove {{skill}}",
+    "mediaUrlPlaceholder": "Paste link",
+    "addMediaLink": "Add media link",
+    "removeMediaLink": "Remove media link",
+    "linkType": {
+      "github": "GitHub",
+      "website": "Website",
+      "twitter": "X",
+      "linkedin": "LinkedIn",
+      "telegram": "Telegram",
+      "external": "Other"
+    },
     "international": "International",
     "reputationScore": "Reputation Score",
     "earnings": "Earnings",
@@ -757,6 +859,23 @@
     "rolePortfolio": "Role Portfolio",
     "skillPortfolio": "Skill Portfolio",
     "currentFootprint": "Current Collaboration Footprint",
+    "daoOverview": "DAO Collaboration Overview",
+    "daoOverviewHint": "Shows roles, collaboration status, and contribution areas by organization.",
+    "participatingOrganizations": "Participating Organizations",
+    "participatingOrganizationsHint": "Shows roles, collaboration status, and contribution areas by organization.",
+    "daoActive": "Active",
+    "daoPast": "Past",
+    "contributionPackages": "Contribution Packages",
+    "contributionPackagesHint": "A standard format for contribution type, organization, outcome, and status.",
+    "contributionArchive": "Contribution Archive",
+    "contributionArchiveHint": "View contribution records as cards or a timeline.",
+    "archiveView": {
+      "list": "List",
+      "timeline": "Timeline"
+    },
+    "proposals": "Proposals",
+    "proposalsHint": "Proposal and governance records this person initiated or joined.",
+    "proposalsEmpty": "{{name}} has no public proposal records yet.",
     "rep": {
       "last6Months": "Last 6 months trend",
       "showBreakdown": "Show reputation breakdown",
@@ -784,7 +903,10 @@
       "writing": "Writing",
       "works": "Works & Contributions",
       "timeline": "Contribution Log",
-      "daos": "DAO Relations"
+      "daos": "DAO Relations",
+      "organizations": "Organizations",
+      "contributions": "Contributions",
+      "proposals": "Proposal Records"
     }
   },
   "workspace": {
@@ -799,8 +921,199 @@
     "viewAll": "View All →",
     "pendingProposals": "Pending Proposals",
     "notifications": "Notifications",
+    "notificationUnread": "{{count}} unread",
+    "notificationClear": "No unread",
     "markAllRead": "Mark all read",
     "quickLinks": "Quick Links",
+    "space": {
+      "eyebrow": "Personal collaboration space",
+      "desc": "A switchable workspace for your tasks, governance, contributions, and DAO relationships across different organizations.",
+      "newProject": "Create Project"
+    },
+    "views": {
+      "today": "Today",
+      "items": "Collaboration Items",
+      "tasks": "Tasks",
+      "votes": "Votes",
+      "contrib": "Contributions",
+      "daos": "Organizations",
+      "votesDesc": "Governance items that need your vote or continued attention."
+    },
+    "items": {
+      "title": "Collaboration Items",
+      "desc": "Tasks, votes, and confirmation work live in one database, with view switching for the mode that fits the work.",
+      "search": "Search items or organization",
+      "empty": "No matching collaboration items",
+      "emptyColumn": "No items",
+      "metric": {
+        "tasks": "{{count}} open tasks",
+        "votes": "{{count}} governance items"
+      },
+      "stage": {
+        "all": "All",
+        "open": "To Do",
+        "inProgress": "In Progress",
+        "review": "Needs Confirmation",
+        "done": "Completed"
+      },
+      "layout": {
+        "list": "List",
+        "board": "Board"
+      },
+      "kind": {
+        "task": "Task",
+        "vote": "Vote"
+      },
+      "kindFilter": {
+        "all": "All types",
+        "task": "Tasks",
+        "vote": "Votes"
+      },
+      "board": {
+        "open": "To Do",
+        "inProgress": "In Progress",
+        "review": "Needs Confirmation",
+        "done": "Completed"
+      },
+      "columns": {
+        "item": "Item",
+        "kind": "Type",
+        "dao": "Organization",
+        "status": "Status",
+        "deadline": "Due"
+      }
+    },
+    "today": {
+      "eyebrow": "Today",
+      "title": "Handle these collaboration items first",
+      "desc": "Tasks, votes, and contribution records are gathered into one queue so you do not have to hunt across pages.",
+      "continueTask": "Continue task",
+      "voteNow": "Vote pending",
+      "reviewContribution": "Needs review"
+    },
+    "contribStatus": {
+      "title": "Contribution loop",
+      "desc": "Record non-task labor and track it from confirmation to settlement.",
+      "pendingReview": "Pending review",
+      "confirmed": "Confirmed contributions",
+      "pendingSettle": "Pending settlement"
+    },
+    "database": {
+      "title": "Task Database",
+      "desc": "Review all tasks like a collaborative document database. Use the table to judge priority, then switch to board to move status.",
+      "search": "Search tasks or DAO",
+      "table": "Table",
+      "board": "Board",
+      "empty": "No matching tasks",
+      "filter": {
+        "all": "All",
+        "open": "Open",
+        "inProgress": "In Progress",
+        "review": "Under Review",
+        "done": "Completed"
+      },
+      "columns": {
+        "task": "Task",
+        "dao": "DAO",
+        "status": "Status",
+        "deadline": "Due",
+        "reward": "Reward",
+        "action": "Next"
+      },
+      "action": {
+        "apply": "View opportunity",
+        "continue": "Continue",
+        "review": "Review",
+        "archive": "View record"
+      }
+    },
+    "contribDatabase": {
+      "title": "Contribution Database",
+      "desc": "Keep non-standard labor, task contributions, and settlement records in one table for confirmation, review, and payout.",
+      "search": "Search contribution or DAO",
+      "empty": "No matching contribution records",
+      "filter": {
+        "all": "All",
+        "draft": "Draft",
+        "pending": "Pending",
+        "confirmed": "Confirmed",
+        "settleable": "Settleable",
+        "settled": "Settled"
+      },
+      "metric": {
+        "pending": "Pending records",
+        "hours": "Confirmed hours",
+        "settleable": "Settleable amount"
+      },
+      "columns": {
+        "record": "Contribution",
+        "dao": "DAO",
+        "type": "Type",
+        "status": "Status",
+        "hours": "Hours",
+        "reward": "Reward",
+        "action": "Next"
+      },
+      "type": {
+        "coordination": "Coordination",
+        "education": "Education",
+        "community": "Community",
+        "documentation": "Documentation",
+        "content": "Content",
+        "review": "Review"
+      },
+      "status": {
+        "draft": "Draft",
+        "pending": "Pending",
+        "confirmed": "Confirmed",
+        "settleable": "Settleable",
+        "settled": "Settled"
+      },
+      "action": {
+        "draft": "Continue editing",
+        "pending": "View progress",
+        "confirmed": "Await payout",
+        "settleable": "Request payout",
+        "settled": "View record"
+      }
+    },
+    "daoDatabase": {
+      "title": "Organization Relationship Database",
+      "desc": "Keep joined, watched, and paused DAOs in one table so you can scan roles, tasks, contributions, and governance responsibilities.",
+      "search": "Search DAO or role",
+      "empty": "No matching organization relationships",
+      "findMore": "Find more DAOs",
+      "open": "Open",
+      "filter": {
+        "all": "All",
+        "active": "Active",
+        "watching": "Watching",
+        "paused": "Paused"
+      },
+      "status": {
+        "active": "Active",
+        "watching": "Watching",
+        "paused": "Paused"
+      },
+      "metric": {
+        "active": "Active DAOs",
+        "tasks": "Org tasks",
+        "votes": "Governance pending"
+      },
+      "columns": {
+        "dao": "Organization",
+        "role": "My role",
+        "status": "Relationship",
+        "tasks": "Tasks",
+        "contrib": "Contrib",
+        "activity": "Recent activity",
+        "action": "Entry"
+      },
+      "short": {
+        "tasks": "tasks",
+        "votes": "votes"
+      }
+    },
     "link": {
       "bounties": "Browse Bounties",
       "governance": "Governance",
@@ -817,12 +1130,16 @@
     "tasks": "tasks",
     "status": {
       "open": "Open",
+      "pendingStart": "Ready to Start",
+      "assigned": "Assigned",
       "inProgress": "In Progress",
       "review": "Under Review",
       "done": "Completed"
     },
     "kanban": {
       "title": "Collaboration Board",
+      "focusTitle": "Current Tasks",
+      "focusDesc": "Only tasks in progress or awaiting confirmation are shown here to keep the Today view focused.",
       "open": "Open",
       "inProgress": "In Progress",
       "review": "Under Review",
@@ -844,6 +1161,181 @@
       "contractDeadline": "1 week left",
       "discord": "Discord Bot Configuration",
       "discordDeadline": "Completed"
+    },
+    "taskDetail": {
+      "back": "Back to Workspace",
+      "notFound": "Task not found",
+      "commentPlaceholder": "Add progress, blockers, or anything that needs organization confirmation...",
+      "section": {
+        "context": "Context",
+        "checklist": "Delivery Checklist",
+        "package": "Standard Contribution Package",
+        "evidence": "Verification Entries",
+        "activity": "Activity and Discussion",
+        "status": "Task Status",
+        "people": "Collaboration Roles",
+        "tags": "Tags"
+      },
+      "side": {
+        "status": "Current status",
+        "deadline": "Timing",
+        "reward": "Reward",
+        "priority": "Priority",
+        "settlement": "Settlement",
+        "assignee": "Assignee",
+        "reviewer": "Reviewer",
+        "confirmer": "Confirming org"
+      },
+      "next": {
+        "title": "Next Step",
+        "desc": "After submitting work, you can create a contribution package for organization confirmation and settlement.",
+        "submit": "Submit Work"
+      },
+      "action": {
+        "accept": "Accept Task",
+        "start": "Start Task",
+        "submit": "Submit Work",
+        "supplement": "Add Materials",
+        "viewRecord": "View Record"
+      },
+      "package": {
+        "hint": "Task delivery also uses the standard contribution package so different contribution forms can be recorded, verified, and confirmed.",
+        "open": "Log package",
+        "defaultSummary": "Task delivery contribution package",
+        "submitted": "Work submitted. You can keep adding the contribution package and verification entries.",
+        "work": "What happened",
+        "workDesc": "Record the work, scope, and key process.",
+        "outcome": "What remained",
+        "outcomeDesc": "Deliverables, docs, decisions, process, or reusable assets.",
+        "verification": "How to verify",
+        "verificationDesc": "Links, screenshots, files, meeting notes, on-chain records, or internal records."
+      },
+      "priority": {
+        "high": "High",
+        "normal": "Normal",
+        "low": "Low"
+      },
+      "settlement": {
+        "rewardAfterConfirm": "Settle after confirmation",
+        "recordFirst": "Archive first",
+        "pendingConfirm": "Pending confirmation",
+        "settled": "Settled"
+      },
+      "source": {
+        "productSprint": "Product sprint",
+        "governance": "Governance research",
+        "daoTask": "Organization task",
+        "knowledge": "Knowledge base",
+        "automation": "Automation maintenance"
+      },
+      "time": {
+        "today": "Today",
+        "yesterday": "Yesterday",
+        "twoDaysAgo": "2 days ago",
+        "threeDaysAgo": "3 days ago",
+        "lastWeek": "Last week"
+      },
+      "design": {
+        "objective": "Turn the next core collaboration flow for MetaGame into a reviewable product prototype, helping members understand how tasks, proposals, and contribution records connect.",
+        "context": "This task comes from a product sprint discussion. It should connect task details, contribution packages, and organization confirmation without adding unnecessary complexity.",
+        "check": {
+          "1": "Map the core information architecture and right-side metadata for task details.",
+          "2": "Create a low-fidelity prototype covering ready-to-start, in-progress, and needs-confirmation states.",
+          "3": "Mark how completed work moves into a contribution package and organization confirmation."
+        },
+        "evidence": {
+          "1": "Figma prototype link or screenshot ID.",
+          "2": "Product discussion notes and review feedback."
+        },
+        "activity": {
+          "1": "Assigned the product prototype task to Sero.",
+          "2": "Confirmed that the first pass should focus on low-fidelity structure before visual polish."
+        }
+      },
+      "research": {
+        "objective": "Document how Nation3 handles task assignment, proposal participation, and contribution confirmation, then turn it into research that HumaDAO can reuse.",
+        "context": "This is not an open bounty. It is an organization-assigned research item that should enter the knowledge base and contribution archive after completion.",
+        "check": {
+          "1": "Break down roles, permissions, and confirmation paths in the governance flow.",
+          "2": "Summarize which parts are useful for HumaDAO's workspace and task details.",
+          "3": "Publish a research brief with verification links."
+        },
+        "evidence": {
+          "1": "Research document link.",
+          "2": "Source references and screenshots."
+        },
+        "activity": {
+          "1": "Nation3 governance group assigned the research task to Sero."
+        }
+      },
+      "frontend": {
+        "objective": "Refine the workspace task database UI so list, board, and task-detail entry points stay clear on desktop and mobile.",
+        "context": "The workspace has been consolidated into a collaboration-item database. The next step is connecting rows, board cards, and task details into one coherent flow.",
+        "check": {
+          "1": "Improve mobile width behavior for list rows and board cards.",
+          "2": "Ensure task entries open internal organization task details, not the external bounty pool.",
+          "3": "Add submission, confirmation, and activity discussion areas to the task detail page."
+        },
+        "evidence": {
+          "1": "Frontend commit record or local build result.",
+          "2": "Desktop and mobile screenshots."
+        },
+        "activity": {
+          "1": "peaq created the frontend component task.",
+          "2": "Sero started the component structure.",
+          "3": "Maintainer noted that mobile adaptation should be fixed first."
+        }
+      },
+      "contract": {
+        "objective": "Add smart contract test cases covering core interactions, failure paths, and basic security boundaries.",
+        "context": "This is an internal technical delivery for MetaGame. Test records should be kept for later review.",
+        "check": {
+          "1": "Add happy-path tests for the main contract methods.",
+          "2": "Add permission, boundary, and failure-path tests.",
+          "3": "Summarize test results and remaining risks."
+        },
+        "evidence": {
+          "1": "Test report or CI link.",
+          "2": "Key failed cases and fix notes."
+        },
+        "activity": {
+          "1": "Sero started organizing the test cases."
+        }
+      },
+      "docs": {
+        "objective": "Update community documentation so new members understand organization entry points, contribution records, and task confirmation.",
+        "context": "The task has been submitted and is waiting for confirmation from the LexDAO documentation maintainer.",
+        "check": {
+          "1": "Update onboarding instructions.",
+          "2": "Add contribution-record examples.",
+          "3": "Mark sections that still need organization confirmation."
+        },
+        "evidence": {
+          "1": "Documentation change link.",
+          "2": "List of sections awaiting confirmation."
+        },
+        "activity": {
+          "1": "Sero submitted the community documentation update.",
+          "2": "Maintainer started reviewing the document structure."
+        }
+      },
+      "discord": {
+        "objective": "Complete basic Discord bot configuration so community reminders, task updates, and voting notifications can reach members automatically.",
+        "context": "This task is completed and settled. Keep the configuration record for reuse.",
+        "check": {
+          "1": "Configure the task-reminder channel.",
+          "2": "Configure the voting notification template.",
+          "3": "Run one real notification test."
+        },
+        "evidence": {
+          "1": "Bot configuration screenshot.",
+          "2": "Notification test record."
+        },
+        "activity": {
+          "1": "Sero submitted the bot configuration record.",
+          "2": "peaq community operations confirmed the task was complete."
+        }
+      }
     },
     "vote": {
       "treasury": "Increase Community Treasury",
@@ -874,7 +1366,14 @@
     },
     "contrib": {
       "logTitle": "Log Contribution",
-      "logDesc": "Record non-task contributions: coordination, education, community care, etc.",
+      "logDesc": "Use one standard contribution package for non-task work, task delivery, and offline collaboration, then submit it for organization confirmation.",
+      "packageTitle": "Standard Contribution Package",
+      "packageDesc": "Every contribution uses the same structure: what happened, what remained, where it can be verified, then it can move into organization confirmation or settlement review.",
+      "trust": {
+        "self": "Self record",
+        "package": "Package",
+        "org": "Org confirmation"
+      },
       "typeLabel": "Contribution Type",
       "types": {
         "coordination": "Coordination",
@@ -890,11 +1389,40 @@
       "hoursLabel": "Hours Invested",
       "summaryLabel": "Description",
       "summaryPlaceholder": "Describe what you did and its impact...",
+      "outcomeLabel": "Contribution outcome",
+      "outcomePlaceholder": "Describe what this contribution left behind: deliverable, process, relationship, service result, decision record, or knowledge asset.",
+      "verificationLabel": "Verification entry",
+      "verificationPlaceholder": "Add traceable references: links, file names, screenshot IDs, meeting notes, event records, on-chain records, or internal record notes.",
+      "requestLabel": "After submission",
+      "requests": {
+        "record": "Archive only",
+        "confirm": "Request confirmation",
+        "settle": "Request settlement"
+      },
       "submit": "Submit",
       "submitting": "Submitting...",
       "success": "Contribution Logged",
-      "successDesc": "Thank you! Your contribution has been submitted and is pending review by the DAO admin.",
-      "requiredHint": "Type, DAO and description are required"
+      "successDesc": "The contribution package has been submitted. The organization can verify it and decide whether it moves into reputation or settlement.",
+      "requiredHint": "Type, DAO, description, outcome, and verification entry are required"
+    },
+    "contribRecord": {
+      "protocol": "Documented Luboom Reactor collaboration protocol",
+      "protocolDate": "Today",
+      "frontend": "Reviewed frontend delivery for protocol crowdsourcing",
+      "frontendDate": "Yesterday",
+      "onboarding": "Ran onboarding for Open University members",
+      "onboardingDate": "3 days ago",
+      "community": "Followed up with eldercare volunteers",
+      "communityDate": "Last week",
+      "notes": "Drafted visual books co-creation notes",
+      "notesDate": "Draft"
+    },
+    "daoRelation": {
+      "luboomActivity": "Protocol updated today",
+      "agentMarketActivity": "Tasks updated yesterday",
+      "protocolActivity": "Delivery needs confirmation",
+      "universityActivity": "Contribution logged 3 days ago",
+      "eldercareActivity": "Settled last week"
     }
   },
   "governance": {
@@ -909,7 +1437,8 @@
       "voting": "Voting",
       "passed": "Passed",
       "discussion": "Discussion",
-      "rejected": "Rejected"
+      "rejected": "Rejected",
+      "executing": "Executing"
     },
     "createProposal": "+ Create Proposal",
     "for": "For",
@@ -935,7 +1464,18 @@
       "quadratic": "Introduce Quadratic Voting",
       "quadraticDesc": "Propose using quadratic voting for major decisions to prevent vote concentration.",
       "crossDAO": "Establish Cross-DAO Collaboration Framework",
-      "crossDAODesc": "Propose establishing standardized cross-DAO collaboration frameworks and communication protocols."
+      "crossDAODesc": "Propose establishing standardized cross-DAO collaboration frameworks and communication protocols.",
+      "luboomProtocol": "Submit Luboom Reactor v1 Collaboration Protocol",
+      "luboomProtocolDesc": "Turn researcher, editor, and practitioner role interfaces into the first minimum actionable protocol and move it into execution.",
+      "livingRules": "Discuss Free Living Co-residence Support Rules",
+      "livingRulesDesc": "Shape a discussion draft around care responsibilities, shared-space use, and member support in co-living.",
+      "openLearning": "Open University Long-term Co-learning Rhythm",
+      "openLearningDesc": "Propose quarterly themes, mentor mechanisms, and outcome capture so long-term co-learning has a stable cadence."
+    },
+    "deadline": {
+      "executing": "In execution",
+      "discussion": "In discussion",
+      "passed": "Ended"
     },
     "comment": {
       "1": "Support this proposal, it's important for ecosystem development.",
@@ -977,11 +1517,83 @@
   "proposalDetail": {
     "notFound": "Proposal not found",
     "backToGovernance": "Back to Governance",
+    "backToDao": "Back to DAO",
+    "backToWorkspace": "Back to Workspace",
     "dao": "DAO",
+    "info": "Proposal Info",
+    "progressTitle": "Governance Progress",
+    "currentAction": "Current Action",
+    "decisionRecord": "Decision Record",
+    "stage": {
+      "discussion": "Discussion",
+      "voting": "Voting",
+      "decision": "Decision",
+      "execution": "Execution"
+    },
+    "action": {
+      "joinDiscussion": "Join Discussion",
+      "viewDraft": "View Proposal Draft",
+      "updateExecution": "Update Execution",
+      "voteDetails": "View Vote Details",
+      "executionPlan": "View Execution Plan",
+      "rejectionReason": "View Rejection Reason",
+      "reopenDiscussion": "Reopen Discussion"
+    },
+    "record": {
+      "passed": {
+        "1": {
+          "title": "Vote passed",
+          "desc": "The proposal has enough support and can move into execution prep."
+        },
+        "2": {
+          "title": "Execution plan pending",
+          "desc": "Members need to clarify owner, timeline, and delivery record."
+        },
+        "3": {
+          "title": "Recorded in governance history",
+          "desc": "This decision stays in the organization's governance history for later review."
+        }
+      },
+      "executing": {
+        "1": {
+          "title": "Decision is active",
+          "desc": "The proposal has moved from voting result into execution."
+        },
+        "2": {
+          "title": "Progress update needed",
+          "desc": "The owner should add milestones, budget usage, or delivery status."
+        },
+        "3": {
+          "title": "Archive after completion",
+          "desc": "Once execution is complete, it becomes a reviewable governance record."
+        }
+      },
+      "rejected": {
+        "1": {
+          "title": "Proposal did not pass",
+          "desc": "This version did not receive enough support and will not enter execution."
+        },
+        "2": {
+          "title": "Discussion remains available",
+          "desc": "Objections and discussion material remain available for future revision."
+        },
+        "3": {
+          "title": "Can be resubmitted",
+          "desc": "The proposer can revise based on feedback and submit again."
+        }
+      }
+    },
     "votingResult": "Voting Result",
     "castVote": "Cast your vote",
     "changeVote": "You have voted. You can change it.",
-    "votedMessage": "You voted \"{{choice}}\""
+    "votedMessage": "You voted \"{{choice}}\"",
+    "viewRecord": "View Decision Record",
+    "commentPlaceholder": "Add your opinion, question, or execution update..."
+  },
+  "discussion": {
+    "me": "Me",
+    "justNow": "Just now",
+    "send": "Send"
   },
   "chat": {
     "channel": {
@@ -1081,10 +1693,12 @@
     "modules": {
       "presetTitle": "Pick a preset",
       "presetDesc": "Start from one of 6 typical DAO shapes — you can fine-tune afterwards.",
-      "tuneTitle": "Fine-tune modules",
-      "tuneDesc": "Toggle governance modules as needed. Dependencies are auto-included.",
-      "previewTitle": "Final tab preview",
-      "previewDesc": "This is the tab order your DAO home will render.",
+      "tuneTitle": "Advanced module settings",
+      "tuneDesc": "Keep the template defaults if you are unsure. You can enable, disable, or configure modules once the governance structure is clearer.",
+      "showAdvanced": "Show advanced",
+      "hideAdvanced": "Hide advanced",
+      "previewTitle": "Published page preview",
+      "previewDesc": "This is the structure your DAO home will render.",
       "previewEmpty": "No modules selected.",
       "locked": "Required",
       "requires": "Requires",
@@ -1146,6 +1760,47 @@
     "requiredSkills": "Required Skills",
     "apply": "Apply for Task",
     "submitWork": "Submit Work",
+    "recordContribution": "Log related contribution",
+    "goWorkspace": "Go to Workspace",
+    "viewWorkQueue": "View my action queue",
+    "defaultContributionSummary": "Bounty-related contribution",
+    "packageHint": "Deliverables become the base of a contribution package and can later sync into the workspace and profile record.",
+    "commentPlaceholder": "Add a question, progress update, or delivery note...",
+    "fallback": {
+      "objective": "{{dao}} posted this collaboration task: {{title}}. Complete a traceable contribution around the goal, delivery boundary, and review criteria.",
+      "activity": "Posted the bounty task \"{{title}}\"",
+      "deliverables": {
+        "confirm": "Confirm the task goal, scope, and review standard",
+        "package": "Submit a reviewable delivery package or process record",
+        "sync": "Sync progress in the workspace and add notes when needed"
+      }
+    },
+    "side": {
+      "status": "Status",
+      "postedAt": "Posted",
+      "reward": "Reward",
+      "rewardOpen": "Open",
+      "applicants": "Applications",
+      "applicantsUnknown": "Open for applications"
+    },
+    "nextAction": {
+      "title": "Next Action",
+      "desc": "Connect task status with contribution logging",
+      "hint": {
+        "open": "If you are ready to take this on, apply first. After applying, the task moves into confirmation and follow-up happens from your workspace.",
+        "applied": "Your application has been sent. Wait for the creator to confirm, then track follow-up from your workspace.",
+        "in_progress": "The task is in progress. Submit your deliverables when they are ready so the creator can review them.",
+        "submitted": "Your work has been submitted. Log the related contribution so it can flow into your profile and DAO contribution record.",
+        "reviewing": "The creator is reviewing your work. You can still log the contribution now to avoid cleanup later.",
+        "completed": "The task is complete. Add the key contribution to your record for reputation, settlement, and review.",
+        "rejected": "This application was not accepted. Return to the bounty list to find a better fit."
+      }
+    },
+    "feedback": {
+      "applied": "Application submitted. You can now follow the confirmation from your workspace.",
+      "submitted": "Work submitted. It is a good moment to log the contribution.",
+      "logged": "Contribution logged. Your workspace is the follow-up entry point."
+    },
     "status": {
       "open": "Open",
       "applied": "Applied",

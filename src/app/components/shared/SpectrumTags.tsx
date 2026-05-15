@@ -5,9 +5,10 @@ import { SPECTRUM_AXES, type SpectrumProfile } from "@/types/dao-tags";
 interface Props {
   spectrum: SpectrumProfile;
   max?: number;
+  className?: string;
 }
 
-export function SpectrumTags({ spectrum, max = 3 }: Props) {
+export function SpectrumTags({ spectrum, max = 3, className }: Props) {
   const { t } = useTranslation();
 
   const tags = SPECTRUM_AXES
@@ -24,7 +25,7 @@ export function SpectrumTags({ spectrum, max = 3 }: Props) {
   return (
     <div className="flex flex-wrap gap-1">
       {tags.map((label) => (
-        <Badge key={label} variant="outline" className="text-muted-foreground text-[0.65rem]">
+        <Badge key={label} variant="outline" className={className ?? "text-muted-foreground text-[0.65rem]"}>
           {label}
         </Badge>
       ))}

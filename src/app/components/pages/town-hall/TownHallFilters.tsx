@@ -21,6 +21,7 @@ export interface TownHallFilterState {
   projectType: string;
   sortField: SortField;
   mode: string;
+  lifecycle: string;
   region: string;
 }
 
@@ -30,6 +31,7 @@ export const defaultFilters: TownHallFilterState = {
   projectType: "all",
   sortField: null,
   mode: "all",
+  lifecycle: "all",
   region: "global",
 };
 

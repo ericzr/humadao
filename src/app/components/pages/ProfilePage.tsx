@@ -3,15 +3,15 @@ import { useParams } from "react-router";
 import { useTranslation } from "react-i18next";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "../ui/tabs";
 import { ProfileCard } from "./profile/ProfileCard";
-import { ReputationCard } from "./profile/ReputationCard";
 import { ContributionList } from "./profile/ContributionList";
-import { ContributionTimeline } from "./profile/ContributionTimeline";
-import { CrossDAOIdentity } from "./profile/CrossDAOIdentity";
+import { ContributionArchive } from "./profile/ContributionArchive";
+import { ProfileProposalList } from "./profile/ProfileProposalList";
 import { getContributorById, getContributorTimeline } from "@/data";
 
 export function ProfilePage() {
   const { t } = useTranslation();
   const { id } = useParams();
+  const isOwnProfile = !id;
   const contributor = useMemo(() => getContributorById(id), [id]);
   const timeline = useMemo(
     () => getContributorTimeline(contributor.id),
@@ -19,44 +19,37 @@ export function ProfilePage() {
   );
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-5 lg:gap-6 items-start">
+    <div className="p-4 sm:p-6 lg:p-8 max-w-6xl mx-auto">
+      <ProfileCard contributor={contributor} editable={isOwnProfile} />
 
-        {/* ── Left sidebar ── */}
-        <div className="space-y-4">
-          <ProfileCard contributor={contributor} />
-          <ReputationCard contributor={contributor} />
-        </div>
-
-        {/* ── Right: tabbed content ── */}
-        <div className="min-w-0">
-          <Tabs defaultValue="works">
-            <TabsList className="bg-secondary mb-5 w-full sm:w-auto">
-              <TabsTrigger value="works" className="flex-1 sm:flex-none">
-                {t("profile.tab.works")}
+      <div className="mt-6">
+        <Tabs defaultValue="organizations">
+          <div className="mb-5 overflow-x-auto pb-1">
+            <TabsList className="h-10 rounded-lg">
+              <TabsTrigger value="organizations" className="rounded-md">
+                {t("profile.tab.organizations")}
               </TabsTrigger>
-              <TabsTrigger value="timeline" className="flex-1 sm:flex-none">
-                {t("profile.tab.timeline")}
+              <TabsTrigger value="contributions" className="rounded-md">
+                {t("profile.tab.contributions")}
               </TabsTrigger>
-              <TabsTrigger value="daos" className="flex-1 sm:flex-none">
-                {t("profile.tab.daos")}
+              <TabsTrigger value="proposals" className="rounded-md">
+                {t("profile.tab.proposals")}
               </TabsTrigger>
             </TabsList>
+          </div>
 
-            <TabsContent value="works" className="mt-0">
-              <ContributionList contributor={contributor} timeline={timeline} />
-            </TabsContent>
+          <TabsContent value="organizations" className="mt-0">
+            <ContributionList contributor={contributor} />
+          </TabsContent>
 
-            <TabsContent value="timeline" className="mt-0">
-              <ContributionTimeline contributor={contributor} timeline={timeline} />
-            </TabsContent>
+          <TabsContent value="contributions" className="mt-0">
+            <ContributionArchive contributor={contributor} timeline={timeline} />
+          </TabsContent>
 
-            <TabsContent value="daos" className="mt-0">
-              <CrossDAOIdentity contributor={contributor} />
-            </TabsContent>
-          </Tabs>
-        </div>
-
+          <TabsContent value="proposals" className="mt-0">
+            <ProfileProposalList contributor={contributor} timeline={timeline} />
+          </TabsContent>
+        </Tabs>
       </div>
     </div>
   );

@@ -80,31 +80,41 @@ const emptyForm: CreateDAOFormData = {
 const STEPS = [
   "create.step.basic",
   "create.step.category",
-  "create.step.modules",
   "create.step.profile",
   "create.step.skills",
   "create.step.funding",
+  "create.step.modules",
   "create.step.links",
 ] as const;
 
 function StepIndicator({ current, total, labels, t }: { current: number; total: number; labels: readonly string[]; t: (k: string) => string }) {
   return (
-    <div className="flex items-center gap-2 mb-8 overflow-x-auto pb-2">
-      {Array.from({ length: total }).map((_, i) => (
-        <div key={i} className="flex items-center gap-2 shrink-0">
-          <div
-            className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-colors ${
-              i < current ? "bg-primary text-primary-foreground" : i === current ? "bg-foreground text-background" : "bg-secondary text-muted-foreground"
-            }`}
-          >
-            {i < current ? <Check className="w-4 h-4" /> : i + 1}
-          </div>
-          <span className={`text-xs ${i === current ? "text-foreground font-medium" : "text-muted-foreground"} hidden sm:inline`}>
-            {t(labels[i])}
-          </span>
-          {i < total - 1 && <div className={`w-6 h-px ${i < current ? "bg-primary" : "bg-border"}`} />}
+    <div className="mb-8">
+      <div className="flex items-center justify-between gap-3 mb-3">
+        <div>
+          <p className="text-xs text-muted-foreground">
+            {current + 1} / {total}
+          </p>
+          <p className="font-medium">{t(labels[current])}</p>
         </div>
-      ))}
+        <div
+          className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
+            current === total - 1 ? "bg-primary text-primary-foreground" : "bg-foreground text-background"
+          }`}
+        >
+          {current === total - 1 ? <Check className="w-4 h-4" /> : current + 1}
+        </div>
+      </div>
+      <div className="grid gap-1.5" style={{ gridTemplateColumns: `repeat(${total}, minmax(0, 1fr))` }}>
+        {Array.from({ length: total }).map((_, i) => (
+          <div
+            key={i}
+            className={`h-1.5 rounded-full transition-colors ${
+              i <= current ? "bg-foreground" : "bg-secondary"
+            }`}
+          />
+        ))}
+      </div>
     </div>
   );
 }
@@ -152,10 +162,10 @@ export function CreateProjectPage() {
   const sections = [
     <BasicInfoSection key="basic" form={form} update={update} />,
     <CategoryTagsSection key="cat" form={form} update={update} />,
-    <ModulesSection key="modules" form={form} update={update} />,
     <DAOProfileSection key="profile" values={valuesProfile} spectrum={spectrumProfile} onValuesChange={setValuesProfile} onSpectrumChange={setSpectrumProfile} />,
     <SkillsSection key="skills" form={form} update={update} />,
     <FundingSection key="fund" form={form} update={update} />,
+    <ModulesSection key="modules" form={form} update={update} />,
     <LinksSection key="links" form={form} update={update} />,
   ];
 

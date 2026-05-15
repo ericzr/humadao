@@ -1,5 +1,5 @@
-import { useMemo } from "react";
-import { Check, Layers } from "lucide-react";
+import { useMemo, useState } from "react";
+import { Check, ChevronDown, Layers, SlidersHorizontal } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Card } from "../../ui/card";
 import { Badge } from "../../ui/badge";
@@ -45,6 +45,7 @@ const LOCKED: DAOModule[] = ["profile", "lineage", "protocolCard"];
 
 export function ModulesSection({ form, update }: Props) {
   const { t } = useTranslation();
+  const [showAdvanced, setShowAdvanced] = useState(false);
   const preset = form?.preset ?? "standard";
   const selected = useMemo(() => new Set(form?.modules ?? PRESETS.standard.modules), [form?.modules]);
 
@@ -170,98 +171,114 @@ export function ModulesSection({ form, update }: Props) {
         </div>
       </Card>
 
-      {/* Module fine-tuning */}
       <Card className="bg-card border-border p-4 sm:p-6 space-y-4">
-        <div>
-          <h2>{t("create.modules.tuneTitle")}</h2>
-          <p className="text-sm text-muted-foreground mt-1">{t("create.modules.tuneDesc")}</p>
-        </div>
+        <button
+          type="button"
+          onClick={() => setShowAdvanced((v) => !v)}
+          className="w-full flex items-center justify-between gap-3 text-left"
+        >
+          <div className="flex items-start gap-3 min-w-0">
+            <div className="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center shrink-0">
+              <SlidersHorizontal className="w-4 h-4 text-muted-foreground" />
+            </div>
+            <div className="min-w-0">
+              <h2>{t("create.modules.tuneTitle")}</h2>
+              <p className="text-sm text-muted-foreground mt-1">{t("create.modules.tuneDesc")}</p>
+            </div>
+          </div>
+          <div className="shrink-0 inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+            {showAdvanced ? t("create.modules.hideAdvanced") : t("create.modules.showAdvanced")}
+            <ChevronDown className={`w-4 h-4 transition-transform ${showAdvanced ? "rotate-180" : ""}`} />
+          </div>
+        </button>
 
-        <div className="space-y-5">
-          {GROUPS.map((group) => {
-            const items = modulesByGroup.get(group) ?? [];
-            if (items.length === 0) return null;
-            return (
-              <div key={group}>
-                <div className="text-xs uppercase tracking-wider text-muted-foreground mb-2">
-                  {t(`create.modules.group.${group}`)}
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {items.map((m) => {
-                    const active = selected.has(m);
-                    const locked = LOCKED.includes(m);
-                    const meta = MODULE_META[m];
-                    const requires = meta.requires ?? [];
-                    return (
-                      <div
-                        key={m}
-                        role="button"
-                        tabIndex={locked ? -1 : 0}
-                        aria-disabled={locked}
-                        aria-pressed={active}
-                        onClick={() => !locked && toggleModule(m)}
-                        onKeyDown={(e) => {
-                          if (locked) return;
-                          if (e.key === "Enter" || e.key === " ") {
-                            e.preventDefault();
-                            toggleModule(m);
-                          }
-                        }}
-                        className={`text-left rounded-lg border p-3 transition select-none ${
-                          active
-                            ? "border-foreground bg-accent"
-                            : "border-border bg-secondary hover:border-foreground/40"
-                        } ${locked ? "opacity-80 cursor-not-allowed" : "cursor-pointer"}`}
-                      >
-                        <div className="flex items-start justify-between gap-2">
-                          <div className="min-w-0">
-                            <div className="flex items-center gap-2">
-                              <span className="font-medium text-sm">{t(meta.labelKey)}</span>
-                              {locked && (
-                                <Badge variant="outline" className="text-[10px] border-border text-muted-foreground">
-                                  {t("create.modules.locked")}
-                                </Badge>
+        {showAdvanced && (
+          <div className="space-y-5 pt-2 border-t border-border">
+            {GROUPS.map((group) => {
+              const items = modulesByGroup.get(group) ?? [];
+              if (items.length === 0) return null;
+              return (
+                <div key={group}>
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground mb-2">
+                    {t(`create.modules.group.${group}`)}
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {items.map((m) => {
+                      const active = selected.has(m);
+                      const locked = LOCKED.includes(m);
+                      const meta = MODULE_META[m];
+                      const requires = meta.requires ?? [];
+                      return (
+                        <div
+                          key={m}
+                          role="button"
+                          tabIndex={locked ? -1 : 0}
+                          aria-disabled={locked}
+                          aria-pressed={active}
+                          onClick={() => !locked && toggleModule(m)}
+                          onKeyDown={(e) => {
+                            if (locked) return;
+                            if (e.key === "Enter" || e.key === " ") {
+                              e.preventDefault();
+                              toggleModule(m);
+                            }
+                          }}
+                          className={`text-left rounded-lg border p-3 transition select-none ${
+                            active
+                              ? "border-foreground bg-accent"
+                              : "border-border bg-secondary hover:border-foreground/40"
+                          } ${locked ? "opacity-80 cursor-not-allowed" : "cursor-pointer"}`}
+                        >
+                          <div className="flex items-start justify-between gap-2">
+                            <div className="min-w-0">
+                              <div className="flex items-center gap-2">
+                                <span className="font-medium text-sm">{t(meta.labelKey)}</span>
+                                {locked && (
+                                  <Badge variant="outline" className="text-[10px] border-border text-muted-foreground">
+                                    {t("create.modules.locked")}
+                                  </Badge>
+                                )}
+                              </div>
+                              <p className="text-xs text-muted-foreground leading-relaxed mt-1 line-clamp-2">
+                                {t(meta.descKey)}
+                              </p>
+                              {requires.length > 0 && (
+                                <div className="text-[10px] text-muted-foreground mt-1">
+                                  {t("create.modules.requires")}: {requires.map((r) => t(MODULE_META[r].labelKey)).join("、")}
+                                </div>
                               )}
                             </div>
-                            <p className="text-xs text-muted-foreground leading-relaxed mt-1 line-clamp-2">
-                              {t(meta.descKey)}
-                            </p>
-                            {requires.length > 0 && (
-                              <div className="text-[10px] text-muted-foreground mt-1">
-                                {t("create.modules.requires")}: {requires.map((r) => t(MODULE_META[r].labelKey)).join("、")}
-                              </div>
-                            )}
+                            <div
+                              className={`w-4 h-4 rounded border flex items-center justify-center shrink-0 mt-0.5 ${
+                                active ? "bg-foreground border-foreground" : "border-border"
+                              }`}
+                            >
+                              {active && <Check className="w-3 h-3 text-background" />}
+                            </div>
                           </div>
-                          <div
-                            className={`w-4 h-4 rounded border flex items-center justify-center shrink-0 mt-0.5 ${
-                              active ? "bg-foreground border-foreground" : "border-border"
-                            }`}
-                          >
-                            {active && <Check className="w-3 h-3 text-background" />}
-                          </div>
+                          {active && isIntegrationModule(m) && (
+                            <IntegrationLevelPicker
+                              module={m}
+                              value={currentLevels[m] ?? defaultLevelFor(m)!}
+                              onChange={(level) => setLevel(m, level)}
+                            />
+                          )}
+                          {active && hasModuleConfig(m) && (
+                            <ModuleConfigEditor
+                              module={m}
+                              value={currentConfig[m] ?? defaultConfigFor(m)}
+                              onChange={(v) => setConfig(m, v)}
+                            />
+                          )}
                         </div>
-                        {active && isIntegrationModule(m) && (
-                          <IntegrationLevelPicker
-                            module={m}
-                            value={currentLevels[m] ?? defaultLevelFor(m)!}
-                            onChange={(level) => setLevel(m, level)}
-                          />
-                        )}
-                        {active && hasModuleConfig(m) && (
-                          <ModuleConfigEditor
-                            module={m}
-                            value={currentConfig[m] ?? defaultConfigFor(m)}
-                            onChange={(v) => setConfig(m, v)}
-                          />
-                        )}
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        )}
       </Card>
 
       {/* Live preview */}

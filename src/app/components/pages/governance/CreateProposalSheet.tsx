@@ -9,7 +9,14 @@ import type { Proposal } from "@/types";
 
 const PROPOSAL_TYPES = ["budget", "rule", "personnel", "partnership", "experiment", "other"] as const;
 const DEADLINES = ["3d", "7d", "14d", "30d"] as const;
-const DAOS = ["peaq", "莱克斯DAO", "元游戏", "Nation3", "Agent 市场", "真知沉淀"];
+const DAOS = [
+  { id: "peaq", name: "peaq" },
+  { id: "lex-dao", name: "莱克斯DAO" },
+  { id: "metagame", name: "元游戏" },
+  { id: "nation3", name: "Nation3" },
+  { id: "agent-market", name: "Agent 市场" },
+  { id: "luboom-reactor", name: "真知沉淀" },
+];
 
 interface Props {
   open: boolean;
@@ -45,10 +52,11 @@ export function CreateProposalSheet({ open, onClose, onCreated }: Props) {
     await new Promise((r) => setTimeout(r, 900));
     const newProposal: Proposal = {
       id: Date.now(),
+      daoId: dao.id,
       titleKey: title,
       descKey: desc,
       author: "我",
-      dao,
+      dao: dao.name,
       statusKey: "governance.filter.discussion",
       forVotes: 0,
       againstVotes: 0,
@@ -140,15 +148,15 @@ export function CreateProposalSheet({ open, onClose, onCreated }: Props) {
               <div className="flex flex-wrap gap-2">
                 {DAOS.map((d) => (
                   <button
-                    key={d}
+                    key={d.id}
                     onClick={() => setDao(d)}
                     className={`px-3 py-1.5 rounded-full text-xs transition border ${
-                      dao === d
+                      dao.id === d.id
                         ? "bg-foreground text-background border-foreground"
                         : "border-border text-muted-foreground hover:text-foreground hover:border-foreground/30"
                     }`}
                   >
-                    {d}
+                    {d.name}
                   </button>
                 ))}
               </div>
