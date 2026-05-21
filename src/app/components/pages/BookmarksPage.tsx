@@ -50,7 +50,7 @@ export function BookmarksPage() {
   };
 
   return (
-    <div className="flex-1 p-4 sm:p-6 lg:p-8 max-w-4xl">
+    <div className="mx-auto w-full max-w-6xl p-4 sm:p-6 lg:p-8">
       <div className="flex items-center gap-3 mb-2">
         <Bookmark className="w-6 h-6" />
         <h1 className="text-xl font-semibold">{t("bookmarks.title")}</h1>

@@ -139,10 +139,78 @@
     }
   },
   "discover": {
-    "title": "Discover",
-    "subtitle": "Explore DAO ecosystems, bounty opportunities, and top contributors",
+    "title": "Incubation Ground",
+    "eyebrow": "Community commons",
+    "subtitle": "A public place for early questions, visions, and small actions to find their first people before they become full DAO projects.",
     "clusterTitle": "Real-world Mission Tracks",
-    "searchPlaceholder": "Search DAOs, bounties, contributors...",
+    "searchPlaceholder": "Search seeds, questions, drafts, or small actions...",
+    "startSeed": "Start a seed",
+    "townHall": "Open Town Hall",
+    "seedTitle": "Seeds taking shape",
+    "seedDesc": "These are not mature organizations yet. They are project origins looking for shared language, first collaborators, and a smallest next action.",
+    "seedBadge": "Seed",
+    "nextStep": "Next step",
+    "actionTitle": "Small actions",
+    "actionDesc": "Use one low-friction contribution to test whether the question is real.",
+    "draftTitle": "Consensus drafts",
+    "draftDesc": "Public texts that are not governance proposals yet, but are ready to be shaped by more people.",
+    "origin": {
+      "problem": "Question",
+      "problemDesc": "Start from a real, specific question worth answering, not from an organization name.",
+      "people": "People",
+      "peopleDesc": "Find people willing to define the question together before deciding whether it needs a DAO.",
+      "action": "Small action",
+      "actionDesc": "Validate consensus through one executable action before building a full system."
+    },
+    "seeds": {
+      "care": {
+        "title": "Community Care Mutual Aid Network",
+        "desc": "A sustainable community collaboration prototype for eldercare, neighborhood mutual aid, volunteers, and professional support.",
+        "need": "Needs caregivers, community organizers, service designers",
+        "next": "Collect 5 real care scenarios and draft the first problem map."
+      },
+      "learning": {
+        "title": "A New University for the AI Era",
+        "desc": "Redesign learning communities around real projects, interdisciplinary growth, and long-term peer relationships.",
+        "need": "Needs educators, researchers, young co-creators",
+        "next": "Co-write learner profiles and the first set of learning themes."
+      },
+      "protocol": {
+        "title": "Protocol Crowdsourcing Platform",
+        "desc": "Move tasks, rules, settlement, and contribution recognition from gig platforms into transparent, portable collaboration protocols.",
+        "need": "Needs product, protocol design, operations, legal perspectives",
+        "next": "Analyze 3 failed crowdsourcing cases and distill a minimum viable protocol."
+      }
+    },
+    "actions": {
+      "case": {
+        "title": "Add a real case",
+        "desc": "Submit a concrete case for a seed so it can move from abstract vision back into a real scene.",
+        "meta": "15 min"
+      },
+      "interview": {
+        "title": "Join a consensus interview",
+        "desc": "Use one short interview to respond to the question, boundary, and role you are willing to take.",
+        "meta": "30 min"
+      },
+      "map": {
+        "title": "Map the problem",
+        "desc": "Turn scattered pain points, stakeholders, and existing resources into a discussable map.",
+        "meta": "Collaborative"
+      }
+    },
+    "drafts": {
+      "careProtocol": {
+        "title": "Minimum Community Care Protocol",
+        "desc": "Define care requests, responders, service boundaries, record keeping, and responsibility sharing.",
+        "state": "Being drafted"
+      },
+      "learningCharter": {
+        "title": "First Co-learning Charter for the New University",
+        "desc": "Describe the basic relationships and shared commitments between learners, mentors, and project initiators.",
+        "state": "Open for co-writing"
+      }
+    },
     "position": {
       "eyebrow": "Discover page role",
       "desc": "This page surfaces featured mission tracks, hot DAOs, bounty opportunities, and contributor signals. Use Town Hall for the full directory, advanced filters, and location-based browsing.",
@@ -479,9 +547,15 @@
       "organization": "Organization"
     },
     "overview": {
-      "title": "Start with one action people can join",
+      "title": "Vision and goals",
+      "eyebrow": "Project overview",
       "nextStep": "Next step",
+      "goal": "Shared goal",
       "fit": "Who should join",
+      "collaboration": "Collaboration",
+      "participation": "Participation",
+      "stage": "Current stage",
+      "scrollHint": "Scroll to read the full content",
       "findTask": "View tasks",
       "vote": "Vote",
       "discuss": "Discuss"
@@ -489,9 +563,9 @@
     "productPage": {
       "empty": "No display modules are enabled for this view yet.",
       "tasks": {
-        "title": "Tasks and contribution entry",
-        "desc": "Review this DAO's bounties, board, events, and contribution modules so members can quickly find an action to join.",
-        "primary": "View this DAO's bounties"
+        "title": "Task database",
+        "desc": "Place this DAO’s tasks in one filterable database so people can scan status first, then open the task.",
+        "primary": "Open task database"
       },
       "governance": {
         "title": "Governance and decisions",
@@ -518,6 +592,34 @@
         "updates": "Updates",
         "members": "Members",
         "subOrgs": "Sub-orgs"
+      }
+    },
+    "taskDatabase": {
+      "search": "Search tasks or status",
+      "empty": "No matching DAO tasks",
+      "kind": {
+        "task": "Task"
+      },
+      "skill": {
+        "all": "All skills"
+      },
+      "filter": {
+        "all": "All",
+        "open": "Open",
+        "active": "In progress",
+        "review": "Needs confirmation",
+        "done": "Done"
+      },
+      "columns": {
+        "task": "Item",
+        "kind": "Type",
+        "dao": "Organization",
+        "status": "Status"
+      },
+      "sample": {
+        "luboomConsensus": "Shape the Luboom reactor consensus outline",
+        "luboomInterview": "Distill the first practitioner interview notes",
+        "luboomEditorial": "Review the theme reactor publishing draft"
       }
     },
     "showcase": {
@@ -629,6 +731,15 @@
     "tasks": "tasks",
     "proposals": "Proposals",
     "proposalsEmpty": "This organization has no public proposals yet.",
+    "governancePage": {
+      "title": "Organization Governance",
+      "subtitle": "Review this DAO's proposals, votes, discussions, and execution records.",
+      "viewAll": "View all governance",
+      "backToDAO": "Back to DAO home",
+      "backTownHall": "Back to Town Hall",
+      "notFound": "DAO not found",
+      "emptyFilter": "No proposals match this filter."
+    },
     "proposal": {
       "treasury": "Increase Community Treasury Allocation to ¥50,000",
       "treasuryStatus": "Voting",
@@ -1428,6 +1539,9 @@
   "governance": {
     "title": "Governance",
     "subtitle": "Participate in proposal voting and shape the future of DAOs",
+    "directoryTitle": "DAO Governance Directory",
+    "directorySubtitle": "Governance belongs to a specific organization. Choose a DAO to review its proposals, votes, and execution records.",
+    "directoryStats": "{{total}} proposals · {{active}} active",
     "activeProposals": "Active Proposals",
     "passedThisMonth": "Passed This Month",
     "totalVoters": "Total Voters",
@@ -1440,7 +1554,7 @@
       "rejected": "Rejected",
       "executing": "Executing"
     },
-    "createProposal": "+ Create Proposal",
+    "createProposal": "Create Proposal",
     "for": "For",
     "against": "Against",
     "abstain": "Abstain",

@@ -1,53 +1,60 @@
-import { useState } from "react";
-import { Card } from "../ui/card";
-import { Button } from "../ui/button";
+import { Link } from "react-router";
+import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { ProposalList } from "./governance/ProposalList";
-import { ProposalDetail } from "./governance/ProposalDetail";
-import { proposals, governanceFilterKeys } from "@/data";
-import type { Proposal } from "@/types";
+import { Button } from "../ui/button";
+import { Card } from "../ui/card";
+import { proposals } from "@/data";
+import { findDAOById } from "@/data/dao";
 
 export function GovernancePage() {
   const { t } = useTranslation();
-  const [selectedProposal, setSelectedProposal] = useState<Proposal>(proposals[0]);
-  const [filterKey, setFilterKey] = useState("governance.filter.all");
-
-  const filtered = filterKey === "governance.filter.all" ? proposals : proposals.filter((p) => p.statusKey === filterKey);
+  const daoIds = Array.from(new Set(proposals.map((proposal) => proposal.daoId)));
+  const daoSummaries = daoIds
+    .map((daoId) => {
+      const dao = findDAOById(daoId);
+      const records = proposals.filter((proposal) => proposal.daoId === daoId);
+      return dao ? { dao, records } : undefined;
+    })
+    .filter(Boolean);
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8 max-w-6xl mx-auto">
-      <h1 className="mb-2">{t("governance.title")}</h1>
-      <p className="text-muted-foreground mb-6">{t("governance.subtitle")}</p>
+    <div className="mx-auto max-w-6xl p-4 sm:p-6 lg:p-8">
+      <section className="mb-6 border-b border-border pb-5">
+        <h1 className="text-2xl font-semibold leading-tight sm:text-3xl">
+          {t("governance.directoryTitle")}
+        </h1>
+        <p className="mt-3 max-w-3xl text-sm leading-6 text-muted-foreground">
+          {t("governance.directorySubtitle")}
+        </p>
+      </section>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-8">
-        {([
-          { labelKey: "governance.activeProposals", value: "2" },
-          { labelKey: "governance.passedThisMonth", value: "5" },
-          { labelKey: "governance.totalVoters", value: "758" },
-          { labelKey: "governance.participationRate", value: "67%" },
-        ]).map((s) => (
-          <Card key={s.labelKey} className="bg-card border-border p-3 sm:p-4 text-center">
-            <p className="text-2xl">{s.value}</p>
-            <p className="text-muted-foreground text-xs">{t(s.labelKey)}</p>
-          </Card>
-        ))}
-      </div>
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {daoSummaries.map((summary) => {
+          if (!summary) return null;
+          const activeCount = summary.records.filter((proposal) =>
+            proposal.statusKey.includes("voting") || proposal.statusKey.includes("discussion")
+          ).length;
 
-      <div className="grid lg:grid-cols-[1fr_380px] gap-6">
-        <div>
-          <ProposalList
-            proposals={filtered}
-            selectedId={selectedProposal.id}
-            onSelect={setSelectedProposal}
-            filterKeys={governanceFilterKeys}
-            activeFilter={filterKey}
-            onFilterChange={setFilterKey}
-          />
-          <Button className="w-full mt-4 bg-foreground text-background hover:bg-foreground/90">{t("governance.createProposal")}</Button>
-        </div>
-        <div className="hidden lg:block">
-          <ProposalDetail proposal={selectedProposal} />
-        </div>
+          return (
+            <Card key={summary.dao.id} className="flex flex-col gap-4 border-border bg-card p-4">
+              <div className="min-w-0">
+                <p className="truncate text-sm font-medium">{t(summary.dao.nameKey as never)}</p>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  {t("governance.directoryStats", {
+                    total: summary.records.length,
+                    active: activeCount,
+                  })}
+                </p>
+              </div>
+              <Button asChild variant="outline" className="mt-auto justify-between border-border">
+                <Link to={`/dao/${summary.dao.id}/governance`}>
+                  {t("dao.governancePage.viewAll")}
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </Card>
+          );
+        })}
       </div>
     </div>
   );

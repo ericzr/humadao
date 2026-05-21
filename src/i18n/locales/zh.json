@@ -139,10 +139,78 @@
     }
   },
   "discover": {
-    "title": "发现",
-    "subtitle": "探索共识组织、赏金与优秀贡献者",
+    "title": "孵化原点",
+    "eyebrow": "社区公共场地",
+    "subtitle": "把还没有成型的议题、愿景和小行动放到同一个公共场地里，让项目在成为 DAO 之前先找到问题、同伴和第一步。",
     "clusterTitle": "现实议题入口",
-    "searchPlaceholder": "搜索 DAO、赏金、贡献者...",
+    "searchPlaceholder": "搜索议题、种子、共识草稿或小行动...",
+    "startSeed": "发起种子",
+    "townHall": "进入市政厅",
+    "seedTitle": "正在形成的种子",
+    "seedDesc": "这些还不是成熟组织，而是正在寻找共同语言、第一批同伴和最小行动的项目原点。",
+    "seedBadge": "种子",
+    "nextStep": "下一步",
+    "actionTitle": "可参与的小行动",
+    "actionDesc": "用一次低门槛贡献测试问题是否真实存在。",
+    "draftTitle": "共识草稿",
+    "draftDesc": "还没有进入治理流程，但已经值得被多人共同打磨的公共文本。",
+    "origin": {
+      "problem": "问题",
+      "problemDesc": "从一个真实、具体、值得被回应的问题开始，而不是从组织名称开始。",
+      "people": "同伴",
+      "peopleDesc": "先找到愿意共同定义问题的人，再决定是否需要形成 DAO。",
+      "action": "小行动",
+      "actionDesc": "用一个可以立刻执行的最小行动验证共识，而不是先搭完整系统。"
+    },
+    "seeds": {
+      "care": {
+        "title": "社区照护互助网络",
+        "desc": "把老人照护、邻里互助、志愿服务和专业支持组织成一个可持续的社区协作原型。",
+        "need": "需要照护者、社区组织者、服务设计者",
+        "next": "收集 5 个真实照护场景，整理第一版问题地图。"
+      },
+      "learning": {
+        "title": "面向 AI 时代的新大学",
+        "desc": "围绕真实项目、跨学科成长和长期同伴关系，重新设计学习共同体的组织方式。",
+        "need": "需要教育者、研究者、青年共创者",
+        "next": "共写一份学习者画像和第一批共学主题。"
+      },
+      "protocol": {
+        "title": "协议型众包平台",
+        "desc": "让任务、规则、结算和贡献承认从临时接单平台升级为透明、可迁移的协作协议。",
+        "need": "需要产品、协议设计、运营和法律视角",
+        "next": "拆解 3 个众包失败案例，提炼最低可行协议。"
+      }
+    },
+    "actions": {
+      "case": {
+        "title": "补充真实案例",
+        "desc": "为一个种子提交具体案例，帮助它从抽象愿景回到现实场景。",
+        "meta": "15 分钟"
+      },
+      "interview": {
+        "title": "参与共识访谈",
+        "desc": "用一次短访谈回应问题、边界和你愿意承担的角色。",
+        "meta": "30 分钟"
+      },
+      "map": {
+        "title": "共建问题地图",
+        "desc": "把分散的痛点、利益相关者和已有资源整理成可讨论的地图。",
+        "meta": "协作中"
+      }
+    },
+    "drafts": {
+      "careProtocol": {
+        "title": "社区照护最小协作协议",
+        "desc": "定义照护请求、响应者、服务边界、记录方式和责任分配。",
+        "state": "草稿整理中"
+      },
+      "learningCharter": {
+        "title": "新大学第一版共学宪章",
+        "desc": "描述学习者、导师、项目发起者之间的基本关系和共同承诺。",
+        "state": "等待共写"
+      }
+    },
     "position": {
       "eyebrow": "发现页定位",
       "desc": "这里展示精选议题、热门组织、赏金机会与贡献者动态；需要完整目录、多维筛选和区域定位时，进入市政厅。",
@@ -479,9 +547,15 @@
       "organization": "组织"
     },
     "overview": {
-      "title": "先从一件可参与的事开始",
+      "title": "项目愿景与目标",
+      "eyebrow": "项目概览",
       "nextStep": "下一步",
+      "goal": "共同目标",
       "fit": "适合谁加入",
+      "collaboration": "协作方式",
+      "participation": "参与方式",
+      "stage": "当前阶段",
+      "scrollHint": "滚动查看完整内容",
       "findTask": "查看任务",
       "vote": "参与治理",
       "discuss": "进入讨论"
@@ -489,9 +563,9 @@
     "productPage": {
       "empty": "这个视图暂未启用可展示模块。",
       "tasks": {
-        "title": "任务与贡献入口",
-        "desc": "集中查看这个 DAO 的赏金、看板、活动和贡献模块，帮助成员快速找到可以参与的行动。",
-        "primary": "查看本组织赏金"
+        "title": "任务数据库",
+        "desc": "把这个 DAO 的任务放进一张可筛选的数据库里，先看状态，再进入具体任务。",
+        "primary": "查看任务数据库"
       },
       "governance": {
         "title": "治理与决策",
@@ -518,6 +592,34 @@
         "updates": "进展",
         "members": "成员",
         "subOrgs": "子组织"
+      }
+    },
+    "taskDatabase": {
+      "search": "搜索任务或状态",
+      "empty": "没有符合条件的组织任务",
+      "kind": {
+        "task": "任务"
+      },
+      "skill": {
+        "all": "全部技能"
+      },
+      "filter": {
+        "all": "全部",
+        "open": "待领取",
+        "active": "进行中",
+        "review": "待确认",
+        "done": "已完成"
+      },
+      "columns": {
+        "task": "事项",
+        "kind": "类型",
+        "dao": "组织",
+        "status": "状态"
+      },
+      "sample": {
+        "luboomConsensus": "整理 Luboom 反应器共识骨架",
+        "luboomInterview": "沉淀第一批实践者访谈记录",
+        "luboomEditorial": "审核主题反应器发布草稿"
       }
     },
     "showcase": {
@@ -629,6 +731,15 @@
     "tasks": "个任务",
     "proposals": "提案",
     "proposalsEmpty": "这个组织暂无公开提案。",
+    "governancePage": {
+      "title": "组织治理",
+      "subtitle": "查看这个 DAO 的提案、投票、讨论与执行记录。",
+      "viewAll": "查看全部治理",
+      "backToDAO": "返回 DAO 主页",
+      "backTownHall": "返回市政厅",
+      "notFound": "未找到该 DAO",
+      "emptyFilter": "当前筛选下暂无提案。"
+    },
     "proposal": {
       "treasury": "增加社区国库拨款至 ¥50,000",
       "treasuryStatus": "投票中",
@@ -1428,6 +1539,9 @@
   "governance": {
     "title": "治理中心",
     "subtitle": "参与提案投票，共同决策 DAO 的未来",
+    "directoryTitle": "DAO 治理目录",
+    "directorySubtitle": "治理属于具体组织。请选择一个 DAO，进入它的完整治理页查看提案、投票和执行记录。",
+    "directoryStats": "{{total}} 个提案 · {{active}} 个进行中",
     "activeProposals": "活跃提案",
     "passedThisMonth": "本月通过",
     "totalVoters": "总投票人次",
@@ -1440,7 +1554,7 @@
       "rejected": "已拒绝",
       "executing": "执行中"
     },
-    "createProposal": "+ 创建新提案",
+    "createProposal": "创建新提案",
     "for": "赞成",
     "against": "反对",
     "abstain": "弃权",

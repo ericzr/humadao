@@ -45,7 +45,7 @@ const TAB_COMPONENTS: Partial<Record<TabModule, React.ComponentType>> = {
 
 const PRODUCT_TAB_MODULES: Record<ProductTab, TabModule[]> = {
   overview: ["profile"],
-  tasks: ["bounties", "kanban", "contributions", "events"],
+  tasks: ["bounties"],
   governance: ["proposals", "budget", "constitution", "paramGov", "tokenGov", "arbitration", "metrics", "snapshot", "safe"],
   knowledge: ["discussion", "docs", "notionEmbed", "discordEmbed"],
   organization: ["lineage", "subOrgs"],
@@ -105,12 +105,19 @@ export function DAOHomePage() {
         <DAOOverview
           dao={dao}
           showProtocolCard={showProtocolCard}
-          onSelectTab={selectProductTab}
         />
       );
     }
     const modules = PRODUCT_TAB_MODULES[tab].filter((m) => availableModules.includes(m));
-    return <DAOProductTabPanel dao={dao} tab={tab} modules={modules} renderModule={renderModule} />;
+    return (
+      <DAOProductTabPanel
+        dao={dao}
+        tab={tab}
+        modules={modules}
+        renderModule={renderModule}
+        governanceHref={`/dao/${dao.id}/governance`}
+      />
+    );
   };
 
   return (

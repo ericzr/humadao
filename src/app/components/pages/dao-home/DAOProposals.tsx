@@ -2,7 +2,7 @@ import { useParams } from "react-router";
 import { useTranslation } from "react-i18next";
 import { Card } from "../../ui/card";
 import { CheckCircle2, Clock, Gavel, Users } from "lucide-react";
-import { ProposalSummaryCard } from "../../shared/ProposalSummaryCard";
+import { ProposalVoteCard } from "../../shared/ProposalVoteCard";
 import { proposals } from "@/data";
 import { findDAOById } from "@/data/dao";
 import { useDAOModuleConfig } from "@/app/hooks/useDAOModuleConfig";
@@ -52,8 +52,8 @@ export function DAOProposals() {
       )}
 
       <div className="space-y-3">
-        {daoProposals.map((p) => (
-          <ProposalSummaryCard key={p.id} proposal={p} compact showDao={false} />
+        {daoProposals.slice(0, 3).map((p) => (
+          <ProposalVoteCard key={p.id} proposal={p} compact showDao={false} />
         ))}
         {daoProposals.length === 0 && (
           <Card className="border-dashed bg-card/50 p-6 text-center text-sm text-muted-foreground">

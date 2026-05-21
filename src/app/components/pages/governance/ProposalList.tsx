@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { ProposalSummaryCard } from "../../shared/ProposalSummaryCard";
+import { ProposalVoteCard } from "../../shared/ProposalVoteCard";
 import type { Proposal } from "@/types";
 
 interface ProposalListProps {
@@ -30,7 +30,7 @@ export function ProposalList({ proposals, selectedId, onSelect, filterKeys, acti
 
       <div className="space-y-3">
         {proposals.map((p) => (
-          <ProposalSummaryCard
+          <ProposalVoteCard
             key={p.id}
             proposal={p}
             selected={selectedId === p.id}

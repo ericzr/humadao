@@ -150,9 +150,7 @@ export function ProposalDetailPage() {
         className="mb-5 inline-flex items-center gap-1 text-sm text-muted-foreground transition hover:text-foreground"
       >
         <ArrowLeft className="h-4 w-4" />
-        {hasDaoContext && backPath === "/workspace"
-          ? t("proposalDetail.backToWorkspace")
-          : hasDaoContext
+        {hasDaoContext
             ? t("proposalDetail.backToDao")
             : t("proposalDetail.backToGovernance")}
       </Link>

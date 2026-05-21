@@ -18,6 +18,7 @@ import { Card } from "../../ui/card";
 import { cn } from "../../ui/utils";
 import { StatusBadge } from "../../shared/StatusBadge";
 import { DatabaseToolbar } from "../../shared/DatabaseToolbar";
+import { ProposalVoteProgress } from "../../shared/ProposalVoteCard";
 import {
   Select,
   SelectContent,
@@ -180,16 +181,11 @@ function ItemRow({ item }: { item: CollaborationItem }) {
 
       {item.progress && (
         <div className="col-start-1 col-end-6 ml-6 pl-1">
-          <div className="flex h-1.5 w-full overflow-hidden rounded-full bg-secondary">
-            <div className="bg-foreground" style={{ width: `${item.progress.forVotes}%` }} />
-            <div className="bg-foreground/30" style={{ width: `${item.progress.againstVotes}%` }} />
-            <div className="bg-foreground/10" style={{ width: `${item.progress.abstain}%` }} />
-          </div>
-          <div className="mt-1 flex w-full justify-between text-[0.65rem] text-muted-foreground">
-            <span>{t("governance.for")} {item.progress.forVotes}%</span>
-            <span>{t("governance.against")} {item.progress.againstVotes}%</span>
-            <span>{t("governance.abstain")} {item.progress.abstain}%</span>
-          </div>
+          <ProposalVoteProgress
+            forVotes={item.progress.forVotes}
+            againstVotes={item.progress.againstVotes}
+            abstain={item.progress.abstain}
+          />
         </div>
       )}
     </Link>
